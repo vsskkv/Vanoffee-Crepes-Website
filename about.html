@@ -6,33 +6,30 @@
   <title>About | Vanoffee Crepes</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="page-fade">
   <header class="mb-5">
-    <div class="container text-center py-3">
-      <a class="navbar-brand fw-bold fs-1" href="index.html" style="color: #c38e70;">Vanoffee Crepes</a>
-    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container justify-content-center">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
+      <div class="container">
+        <!-- Logo on the left -->
+        <a class="navbar-brand" href="index.html">
+          <img src="Vanoffee Crepes.png" alt="Vanoffee Crepes" height="60" class="d-inline-block align-text-top">
+        </a>
+        <!-- Navigation menu in center -->
+        <div class="navbar-nav mx-auto">
+          <a class="nav-link" href="index.html">HOME</a>
+          <a class="nav-link active" href="about.html">ABOUT US</a>
+          <a class="nav-link" href="gallery.html">GALLERY</a>
+          <a class="nav-link" href="contact.html">CONTACT</a>
+        </div>
+        <!-- Icons on the right -->
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="#" title="Search">
+            <i class="fas fa-search"></i>
+          </a>
         </div>
       </div>
     </nav>
