@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vanoffee Crepes - Handcrafted Sweet & Savory Crepes</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/Vanoffee Transparent.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/Vanoffee Transparent.png">
+    <link rel="apple-touch-icon" href="Images/Vanoffee Transparent.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,21 +20,6 @@
                 <img src="Images/Vanoffee Transparent.png" alt="Vanoffee Crepes" height="90" class="d-inline-block align-text-top">
             </a>
             
-            <!-- Mobile Search (visible only on mobile) -->
-            <div class="mobile-search d-lg-none">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search menu, gallery, about..." />
-                        <button class="search-close" id="mobileSearchClose">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    <button class="nav-link search-toggle" id="mobileSearchToggle" title="Search">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-
             <!-- Hamburger Menu Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,6 +27,21 @@
 
             <!-- Navigation Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Mobile Search (at top of hamburger menu) -->
+                <div class="mobile-search d-lg-none">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="mobileSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="mobileSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link active" href="index.html">HOME</a>
                     <a class="nav-link" href="about.html">ABOUT US</a>

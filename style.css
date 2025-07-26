@@ -859,7 +859,8 @@ body.page-loaded {
 
 /* Mobile Navigation */
 .mobile-search {
-    margin-right: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
 }
 
 .navbar-toggler {
@@ -927,7 +928,7 @@ body.page-loaded {
         transform: none;
         width: 100%;
         opacity: 1;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
     }
     
     .mobile-search .search-toggle {
