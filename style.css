@@ -2604,3 +2604,325 @@ input, textarea {
         padding: 1.5rem;
     }
 }
+
+/* Menu Page Specific Styles */
+
+/* Menu Hero Section */
+.menu-hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding-top: 120px;
+}
+
+.menu-hero-section .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Images/15.jpg') center/cover no-repeat;
+    z-index: 1;
+}
+
+.menu-hero-section .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 236, 210, 0.9) 0%, rgba(252, 182, 159, 0.8) 100%);
+    z-index: 2;
+}
+
+.menu-hero-section .hero-content {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Menu Categories */
+.menu-categories {
+    padding: 3rem 0;
+    background: white;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Menu Grid Section */
+.menu-grid-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.menu-item.animate-in {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.menu-item-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.menu-item:hover .menu-item-image img {
+    transform: scale(1.1);
+}
+
+.menu-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(75, 46, 46, 0.9) 0%, rgba(75, 46, 46, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.menu-item:hover .menu-item-overlay {
+    opacity: 1;
+}
+
+.menu-item-overlay .overlay-content {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.menu-item:hover .menu-item-overlay .overlay-content {
+    transform: translateY(0);
+}
+
+.menu-item-overlay h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--vc-yellow);
+}
+
+.menu-item-overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.menu-item-overlay .price {
+    background: var(--vc-yellow);
+    color: var(--vc-brown);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.menu-item-details {
+    padding: 1.5rem;
+}
+
+.menu-item-details h3 {
+    color: var(--vc-brown);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.menu-item-details p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-footer .price {
+    color: var(--vc-brown);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.dietary-info {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dietary-info i {
+    color: var(--vc-yellow);
+    font-size: 0.9rem;
+    cursor: help;
+}
+
+/* Menu Info */
+.menu-info {
+    padding: 6rem 0;
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.info-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.info-item.animate-in {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.info-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.info-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--vc-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: var(--vc-brown);
+    transition: var(--transition);
+}
+
+.info-item:hover .info-icon {
+    transform: scale(1.1);
+    background: var(--vc-brown);
+    color: var(--vc-yellow);
+}
+
+.info-item h3 {
+    color: var(--vc-brown);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.info-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Menu Page */
+@media (max-width: 768px) {
+    .menu-hero-section .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .menu-item-image {
+        height: 200px;
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .category-filters {
+        gap: 0.5rem;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .menu-item-details {
+        padding: 1rem;
+    }
+    
+    .menu-item-details h3 {
+        font-size: 1.1rem;
+    }
+    
+    .info-item {
+        padding: 1.5rem;
+    }
+    
+    .category-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .category-btn {
+        width: 200px;
+    }
+}

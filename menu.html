@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Vanoffee Crepes</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/Vanoffee Transparent.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/Vanoffee Transparent.png">
+    <link rel="apple-touch-icon" href="Images/Vanoffee Transparent.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/Vanoffee Transparent.png" alt="Vanoffee Crepes" height="90" class="d-inline-block align-text-top">
+            </a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Mobile Search (at top of hamburger menu) -->
+                <div class="mobile-search d-lg-none">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="mobileSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="mobileSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                    <a class="nav-link active" href="menu.html">MENU</a>
+                    <a class="nav-link" href="gallery.html">GALLERY</a>
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </div>
+                
+                <!-- Desktop Search (hidden on mobile) -->
+                <div class="desktop-search d-none d-lg-block">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="desktopSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="desktopSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="desktopSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="menu-hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-title-container">
+                    <h1 class="hero-main-title">Our Menu</h1>
+                    <div class="hero-subtitle-container">
+                        <span class="hero-subtitle-line">Sweet & Savory</span>
+                        <span class="hero-subtitle-highlight">Handcrafted with Love</span>
+                    </div>
+                </div>
+                <div class="hero-description">
+                    <p>Discover our carefully crafted selection of crepes, each made fresh to order with premium ingredients. From classic favorites to unique combinations, there's something for every taste.</p>
+                </div>
+                <div class="hero-stats-preview">
+                    <div class="stat-preview">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Menu Items</span>
+                    </div>
+                    <div class="stat-preview">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Fresh Made</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-crepe floating-1">
+                        <img src="Images/15.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-crepe floating-2">
+                        <img src="Images/16.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">All Items</button>
+                <button class="category-btn" data-category="sweet">Sweet Crepes</button>
+                <button class="category-btn" data-category="savory">Savory Crepes</button>
+                <button class="category-btn" data-category="special">Special Crepes</button>
+                <button class="category-btn" data-category="drinks">Drinks</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Grid -->
+    <section class="menu-grid-section">
+        <div class="container">
+            <div class="menu-grid">
+                <!-- Sweet Crepes -->
+                <div class="menu-item" data-category="sweet">
+                    <div class="menu-item-image">
+                        <img src="Images/11.jpg" alt="Nutella Dream">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Nutella Dream</h3>
+                                <p>Rich Nutella, fresh banana, crushed hazelnuts</p>
+                                <div class="price">£6.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Nutella Dream</h3>
+                        <p>Rich Nutella, fresh banana, crushed hazelnuts</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£6.50</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sweet">
+                    <div class="menu-item-image">
+                        <img src="Images/12.jpg" alt="Berry Bliss">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Berry Bliss</h3>
+                                <p>Mixed berries, white chocolate drizzle, vanilla cream</p>
+                                <div class="price">£7.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Berry Bliss</h3>
+                        <p>Mixed berries, white chocolate drizzle, vanilla cream</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£7.00</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sweet">
+                    <div class="menu-item-image">
+                        <img src="Images/16.jpg" alt="Caramel Apple">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Caramel Apple</h3>
+                                <p>Fresh apples, caramel sauce, cinnamon</p>
+                                <div class="price">£6.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Caramel Apple</h3>
+                        <p>Fresh apples, caramel sauce, cinnamon</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£6.50</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sweet">
+                    <div class="menu-item-image">
+                        <img src="Images/18.jpg" alt="Strawberry Delight">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Strawberry Delight</h3>
+                                <p>Fresh strawberries, whipped cream, strawberry sauce</p>
+                                <div class="price">£7.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Strawberry Delight</h3>
+                        <p>Fresh strawberries, whipped cream, strawberry sauce</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£7.00</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Savory Crepes -->
+                <div class="menu-item" data-category="savory">
+                    <div class="menu-item-image">
+                        <img src="Images/13.jpg" alt="Cheese & Mushroom">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Cheese & Mushroom</h3>
+                                <p>Melted cheese, garlic mushrooms, herbs</p>
+                                <div class="price">£7.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Cheese & Mushroom</h3>
+                        <p>Melted cheese, garlic mushrooms, herbs</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£7.50</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="savory">
+                    <div class="menu-item-image">
+                        <img src="Images/14.jpg" alt="Spicy Veg">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Spicy Veg</h3>
+                                <p>Jalapeño, grilled vegetables, creamy sauce</p>
+                                <div class="price">£7.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Spicy Veg</h3>
+                        <p>Jalapeño, grilled vegetables, creamy sauce</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£7.00</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                                <i class="fas fa-pepper-hot" title="Spicy"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="savory">
+                    <div class="menu-item-image">
+                        <img src="Images/17.jpg" alt="Ham & Cheese">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Ham & Cheese</h3>
+                                <p>Premium ham, melted cheese, Dijon mustard</p>
+                                <div class="price">£7.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Ham & Cheese</h3>
+                        <p>Premium ham, melted cheese, Dijon mustard</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£7.50</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-drumstick-bite" title="Contains Meat"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Crepes -->
+                <div class="menu-item" data-category="special">
+                    <div class="menu-item-image">
+                        <img src="Images/15.jpg" alt="Chocolate Lover's">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Chocolate Lover's</h3>
+                                <p>Dark chocolate, chocolate chips, chocolate sauce</p>
+                                <div class="price">£8.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Chocolate Lover's</h3>
+                        <p>Dark chocolate, chocolate chips, chocolate sauce</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£8.00</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                                <i class="fas fa-star" title="Chef's Special"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="special">
+                    <div class="menu-item-image">
+                        <img src="Images/19.jpg" alt="Banana Split">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Banana Split</h3>
+                                <p>Banana, vanilla ice cream, chocolate sauce, nuts</p>
+                                <div class="price">£8.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Banana Split</h3>
+                        <p>Banana, vanilla ice cream, chocolate sauce, nuts</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£8.50</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                                <i class="fas fa-star" title="Chef's Special"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-image">
+                        <img src="Images/11.jpg" alt="Hot Chocolate">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Hot Chocolate</h3>
+                                <p>Rich Belgian chocolate, whipped cream, marshmallows</p>
+                                <div class="price">£3.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Hot Chocolate</h3>
+                        <p>Rich Belgian chocolate, whipped cream, marshmallows</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£3.50</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-image">
+                        <img src="Images/12.jpg" alt="Fresh Coffee">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Fresh Coffee</h3>
+                                <p>Premium Arabica beans, freshly ground and brewed</p>
+                                <div class="price">£2.50</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Fresh Coffee</h3>
+                        <p>Premium Arabica beans, freshly ground and brewed</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£2.50</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="drinks">
+                    <div class="menu-item-image">
+                        <img src="Images/13.jpg" alt="Smoothie">
+                        <div class="menu-item-overlay">
+                            <div class="overlay-content">
+                                <h3>Berry Smoothie</h3>
+                                <p>Mixed berries, yogurt, honey, ice</p>
+                                <div class="price">£4.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h3>Berry Smoothie</h3>
+                        <p>Mixed berries, yogurt, honey, ice</p>
+                        <div class="menu-item-footer">
+                            <span class="price">£4.00</span>
+                            <span class="dietary-info">
+                                <i class="fas fa-leaf" title="Vegetarian"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Info -->
+    <section class="menu-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fresh Made</h3>
+                    <p>Every crepe is made fresh to order, ensuring the perfect texture and taste every time.</p>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Quality Ingredients</h3>
+                    <p>We use only the finest, locally-sourced ingredients to create our delicious crepes.</p>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Made with Love</h3>
+                    <p>Each crepe is crafted with care and attention, just like we'd make for our own family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Hungry for More?</h2>
+                <p>Book our stall for your next event and let us bring the crepe magic to you!</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Book Our Stall</a>
+                    <a href="gallery.html" class="btn btn-outline btn-lg">View Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>About Vanoffee Crepes</h3>
+                    <p>We bring handcrafted, mouth-watering crepes to the streets. Our passion for great food and even greater vibes means every crepe is made with love, quality, and a sprinkle of joy.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <p>Email: hello@vanoffeecrepes.com</p>
+                    <p>Phone: 01234 567890</p>
+                    <p>Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vanoffee Crepes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Page transition effect
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('page-loaded');
+        });
+
+        // Menu filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                        item.classList.add('animate-in');
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.menu-item, .info-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Search functionality for both desktop and mobile
+        function initializeSearch(prefix) {
+            const searchToggle = document.getElementById(prefix + 'SearchToggle');
+            const searchClose = document.getElementById(prefix + 'SearchClose');
+            const searchInput = document.getElementById(prefix + 'SearchInput');
+            const searchContainer = document.querySelector('.' + prefix + '-search .search-container');
+
+            if (!searchToggle || !searchClose || !searchInput || !searchContainer) return;
+
+            function toggleSearch() {
+                if (prefix === 'mobile') {
+                    searchInput.focus();
+                } else {
+                    searchContainer.classList.toggle('active');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    } else {
+                        searchInput.value = '';
+                        hideSearchResults(searchContainer);
+                    }
+                }
+            }
+
+            searchToggle.addEventListener('click', toggleSearch);
+            searchClose.addEventListener('click', toggleSearch);
+
+            // Create search results dropdown
+            const searchResultsDropdown = document.createElement('div');
+            searchResultsDropdown.className = 'search-results-dropdown';
+            searchContainer.appendChild(searchResultsDropdown);
+
+            function showSearchResults(results, container) {
+                if (!results.length) {
+                    searchResultsDropdown.innerHTML = '<div class="search-result-item no-results">No results found</div>';
+                    searchResultsDropdown.style.display = 'block';
+                    return;
+                }
+                
+                searchResultsDropdown.innerHTML = results.map(r => `
+                    <div class="search-result-item">
+                        <div class="result-title">${r.title}</div>
+                        <div class="result-type">${r.type}</div>
+                    </div>
+                `).join('');
+                searchResultsDropdown.style.display = 'block';
+            }
+
+            function hideSearchResults(container) {
+                searchResultsDropdown.style.display = 'none';
+            }
+
+            searchInput.addEventListener('input', function() {
+                const q = this.value.trim().toLowerCase();
+                if (!q) {
+                    hideSearchResults(searchContainer);
+                    return;
+                }
+                const content = getSearchableContent();
+                const results = content.filter(item =>
+                    item.title.toLowerCase().includes(q) ||
+                    item.desc.toLowerCase().includes(q)
+                );
+                showSearchResults(results, searchContainer);
+            });
+
+            if (prefix === 'desktop') {
+                document.addEventListener('click', function(e) {
+                    if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
+                        toggleSearch();
+                    }
+                });
+            }
+        }
+
+        // Initialize both desktop and mobile search
+        initializeSearch('desktop');
+        initializeSearch('mobile');
+
+        // Simple site search (searches visible text content on the page)
+        function getSearchableContent() {
+            let content = [];
+            // Menu items
+            document.querySelectorAll('.menu-item h3').forEach(h3 => {
+                content.push({
+                    type: 'Menu',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Info items
+            document.querySelectorAll('.info-item h3').forEach(h3 => {
+                content.push({
+                    type: 'Info',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            return content;
+        }
+    </script>
+</body>
+</html> 
