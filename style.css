@@ -3481,7 +3481,7 @@ input, textarea {
         object-fit: cover;
     }
     
-    /* Hero section mobile improvements */
+    /* Hero section mobile improvements - ONLY for mobile */
     .hero-visual {
         display: none;
     }
@@ -3834,6 +3834,28 @@ input, textarea {
     .crepe-glow {
         width: 350px;
         height: 350px;
+    }
+    
+    /* Desktop hero visual overrides - ensure images are NOT scaled down */
+    .hero-visual {
+        display: block !important;
+    }
+    
+    .floating-crepe {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .floating-1 {
+        animation-delay: 0s;
+    }
+    
+    .floating-2 {
+        animation-delay: 3s;
+    }
+    
+    .floating-icon {
+        font-size: 2rem;
+        animation: pulse 4s ease-in-out infinite;
     }
     
     /* Navigation desktop improvements */
