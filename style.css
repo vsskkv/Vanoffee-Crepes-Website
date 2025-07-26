@@ -274,12 +274,90 @@ p {
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    padding-top: 70px;
+    padding-top: 150px;
+    margin-top: 20px;
 }
 
 @media (min-width: 768px) {
     .hero-section {
-        padding-top: 80px;
+        padding-top: 180px;
+        margin-top: 30px;
+    }
+}
+
+/* Additional padding for smaller desktop screens */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .hero-section {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    .hero-content {
+        padding: 0 3rem;
+        gap: 3rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+    }
+}
+
+/* Medium desktop screens */
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .hero-section {
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+    
+    .hero-content {
+        padding: 0 4rem;
+        gap: 4rem;
+    }
+}
+
+/* Smaller desktop screens - additional padding */
+@media (min-width: 768px) and (max-width: 1000px) {
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: 70px;
+    }
+    
+    .hero-content {
+        padding: 0 2.5rem;
+        gap: 2.5rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+    }
+}
+
+/* Extra small desktop screens */
+@media (min-width: 1001px) and (max-width: 1200px) {
+    .hero-section {
+        padding-top: 110px;
+        padding-bottom: 65px;
+    }
+    
+    .hero-content {
+        padding: 0 3.5rem;
+        gap: 3.5rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.3rem, 4.8vw, 3.8rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.05rem, 1.9vw, 1.25rem);
     }
 }
 
@@ -412,6 +490,7 @@ p {
     border-radius: 50%;
     box-shadow: var(--shadow-heavy);
     border: 8px solid white;
+    transition: all 0.3s ease;
 }
 
 .crepe-glow {
@@ -424,6 +503,60 @@ p {
     background: radial-gradient(circle, rgba(255, 200, 61, 0.3) 0%, transparent 70%);
     border-radius: 50%;
     animation: pulse 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+/* Responsive hero image sizing */
+@media (max-width: 1200px) {
+    .crepe-image {
+        width: 280px;
+        height: 280px;
+        border-width: 6px;
+    }
+    
+    .crepe-glow {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 992px) {
+    .crepe-image {
+        width: 250px;
+        height: 250px;
+        border-width: 5px;
+    }
+    
+    .crepe-glow {
+        width: 290px;
+        height: 290px;
+    }
+}
+
+@media (max-width: 768px) {
+    .crepe-image {
+        width: 200px;
+        height: 200px;
+        border-width: 4px;
+    }
+    
+    .crepe-glow {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .crepe-image {
+        width: 150px;
+        height: 150px;
+        border-width: 3px;
+    }
+    
+    .crepe-glow {
+        width: 190px;
+        height: 190px;
+    }
 }
 
 /* Scroll Indicator - REMOVED */
@@ -738,9 +871,49 @@ p {
 .footer-bottom {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(75, 46, 46, 0.2);
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.8;
+    color: var(--vc-brown);
+}
+
+/* Social Media Links */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links h4 {
+    color: var(--vc-brown);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--vc-brown);
+    color: var(--vc-yellow);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+    background: var(--vc-yellow);
+    color: var(--vc-brown);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Animations */
@@ -2391,9 +2564,24 @@ input, textarea {
 
 .booking-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (min-width: 1200px) {
+    .booking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .booking-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .booking-card {
@@ -3311,13 +3499,13 @@ input, textarea {
     /* Hero section mobile improvements */
     .hero-section {
         min-height: 50vh;
-        padding-top: 80px;
+        padding-top: 150px;
         padding-bottom: 4rem;
     }
     
     /* Index page specific mobile hero section */
     .hero-section {
-        padding-top: 100px;
+        padding-top: 180px;
         padding-bottom: 5rem;
     }
     
@@ -3512,13 +3700,13 @@ input, textarea {
     /* Hero section tablet improvements */
     .hero-section {
         min-height: 55vh;
-        padding-top: 90px;
+        padding-top: 180px;
         padding-bottom: 4.5rem;
     }
     
     /* Index page specific tablet hero section */
     .hero-section {
-        padding-top: 110px;
+        padding-top: 200px;
         padding-bottom: 5.5rem;
     }
     
