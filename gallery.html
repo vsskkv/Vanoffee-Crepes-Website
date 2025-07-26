@@ -1,139 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery | Vanoffee Crepes</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Vanoffee Crepes</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/Vanoffee Transparent.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/Vanoffee Transparent.png">
+    <link rel="apple-touch-icon" href="Images/Vanoffee Transparent.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-fade">
-  <header class="mb-5">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-        <!-- Logo on the left -->
-        <a class="navbar-brand" href="index.html">
-          <img src="Vanoffee Crepes.png" alt="Vanoffee Crepes" height="60" class="d-inline-block align-text-top">
-        </a>
-        <!-- Navigation menu in center -->
-        <div class="navbar-nav mx-auto">
-          <a class="nav-link" href="index.html">HOME</a>
-          <a class="nav-link" href="about.html">ABOUT US</a>
-          <a class="nav-link active" href="gallery.html">GALLERY</a>
-          <a class="nav-link" href="contact.html">CONTACT</a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/Vanoffee Transparent.png" alt="Vanoffee Crepes" height="90" class="d-inline-block align-text-top">
+            </a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Mobile Search (at top of hamburger menu) -->
+                <div class="mobile-search d-lg-none">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="mobileSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="mobileSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                    <a class="nav-link active" href="gallery.html">GALLERY</a>
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </div>
+                
+                <!-- Desktop Search (hidden on mobile) -->
+                <div class="desktop-search d-none d-lg-block">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="desktopSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="desktopSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="desktopSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Icons on the right -->
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="#" title="Search">
-            <i class="fas fa-search"></i>
-          </a>
-        </div>
-      </div>
     </nav>
-  </header>
 
-  <main class="container my-5">
-    <section class="gallery my-5" id="gallery">
-      <h2 class="text-center mb-4">Our Crepes</h2>
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">1</span>
-            <img src="Images/11.jpg" alt="Crepe 1" class="img-fluid rounded shadow-sm w-100 slide-in from-left" />
-          </div>
+    <!-- Hero Section -->
+    <section class="gallery-hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">2</span>
-            <img src="Images/12.jpg" alt="Crepe 2" class="img-fluid rounded shadow-sm w-100 slide-in" />
-          </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-title-container">
+                    <h1 class="hero-main-title">Our Crepes</h1>
+                    <div class="hero-subtitle-container">
+                        <span class="hero-subtitle-line">A Visual Feast</span>
+                        <span class="hero-subtitle-highlight">Every Bite is Art</span>
+                    </div>
+                </div>
+                <div class="hero-description">
+                    <p>Feast your eyes on our handcrafted creations. Each crepe tells a story of passion, quality, and pure deliciousness.</p>
+                </div>
+                <div class="hero-stats-preview">
+                    <div class="stat-preview">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Signature Crepes</span>
+                    </div>
+                    <div class="stat-preview">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Handcrafted</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-crepe floating-1">
+                        <img src="Images/11.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-crepe floating-2">
+                        <img src="Images/12.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">3</span>
-            <img src="Images/13.jpg" alt="Crepe 3" class="img-fluid rounded shadow-sm w-100 slide-in from-left" />
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">4</span>
-            <img src="Images/14.jpg" alt="Crepe 4" class="img-fluid rounded shadow-sm w-100 slide-in" />
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">5</span>
-            <img src="Images/15.jpg" alt="Crepe 5" class="img-fluid rounded shadow-sm w-100 slide-in from-left" />
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">6</span>
-            <img src="Images/16.jpg" alt="Crepe 6" class="img-fluid rounded shadow-sm w-100 slide-in" />
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">7</span>
-            <img src="Images/17.jpg" alt="Crepe 7" class="img-fluid rounded shadow-sm w-100 slide-in from-left" />
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">8</span>
-            <img src="Images/18.jpg" alt="Crepe 8" class="img-fluid rounded shadow-sm w-100 slide-in" />
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="img-anim-wrapper">
-            <span class="image-number">9</span>
-            <img src="Images/19.jpg" alt="Crepe 9" class="img-fluid rounded shadow-sm w-100 slide-in from-left" />
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <footer class="bg-light text-center py-3 mt-5">
-    <div class="container">
-      <div class="row text-start text-md-left">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <h5 class="mb-2">About Us</h5>
-          <p class="mb-0">Vanoffee Crepes started with a simple idea: to bring handcrafted, mouth-watering crepes to the streets. With a passion for great food and even greater vibes, we’re all about indulgence and quality in every bite.</p>
+    <!-- Gallery Categories -->
+    <section class="gallery-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">All Crepes</button>
+                <button class="category-btn" data-category="sweet">Sweet</button>
+                <button class="category-btn" data-category="savory">Savory</button>
+                <button class="category-btn" data-category="special">Special</button>
+            </div>
         </div>
-        <div class="col-md-6">
-          <h5 class="mb-2">Contact</h5>
-          <p class="mb-1">Email: hello@vanoffeecrepes.com</p>
-          <p class="mb-1">Phone: 01234 567890</p>
-          <p class="mb-0">Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
-        </div>
-      </div>
-      <hr class="my-4">
-      <p class="mb-0">&copy; 2025 Vanoffee Crepes. All rights reserved.</p>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Fade in on load
-    document.body.classList.add('page-fade');
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.style.opacity = 1;
-    });
-    // Fade out on navigation
-    document.querySelectorAll('a.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (this.href && !this.href.endsWith('#') && !this.classList.contains('active')) {
-          e.preventDefault();
-          document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location = this.href;
-          }, 500);
+    <!-- Main Gallery Grid -->
+    <section class="main-gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="sweet">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/11.jpg" alt="Nutella Dream Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Nutella Dream</h3>
+                                <p>Rich Nutella, fresh banana, crushed hazelnuts</p>
+                                <div class="price-tag">£6.50</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="sweet">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/12.jpg" alt="Berry Bliss Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Berry Bliss</h3>
+                                <p>Mixed berries, white chocolate drizzle, vanilla cream</p>
+                                <div class="price-tag">£7.00</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="savory">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/13.jpg" alt="Cheese & Mushroom Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Cheese & Mushroom</h3>
+                                <p>Melted cheese, garlic mushrooms, herbs</p>
+                                <div class="price-tag">£7.50</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="savory">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/14.jpg" alt="Spicy Veg Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Spicy Veg</h3>
+                                <p>Jalapeño, grilled vegetables, creamy sauce</p>
+                                <div class="price-tag">£7.00</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="special">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/15.jpg" alt="Chocolate Lover's Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Chocolate Lover's</h3>
+                                <p>Dark chocolate, chocolate chips, chocolate sauce</p>
+                                <div class="price-tag">£8.00</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="sweet">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/16.jpg" alt="Caramel Apple Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Caramel Apple</h3>
+                                <p>Fresh apples, caramel sauce, cinnamon</p>
+                                <div class="price-tag">£6.50</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="savory">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/17.jpg" alt="Ham & Cheese Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Ham & Cheese</h3>
+                                <p>Premium ham, melted cheese, Dijon mustard</p>
+                                <div class="price-tag">£7.50</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="special">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/18.jpg" alt="Strawberry Delight Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Strawberry Delight</h3>
+                                <p>Fresh strawberries, whipped cream, strawberry sauce</p>
+                                <div class="price-tag">£7.00</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="special">
+                    <div class="gallery-image-wrapper">
+                        <img src="Images/19.jpg" alt="Banana Split Crepe" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Banana Split</h3>
+                                <p>Banana, vanilla ice cream, chocolate sauce, nuts</p>
+                                <div class="price-tag">£8.50</div>
+                                <div class="overlay-buttons">
+                                    <button class="btn btn-sm btn-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Behind the Scenes -->
+    <section class="behind-scenes">
+        <div class="container">
+            <h2 class="section-title text-center">Behind the Scenes</h2>
+            <p class="section-subtitle text-center">See how we craft each perfect crepe with love and precision</p>
+            <div class="process-grid">
+                <div class="process-item">
+                    <div class="process-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>We start with only the finest, locally-sourced ingredients</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Handcrafted</h3>
+                    <p>Each crepe is made by hand with care and attention</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Perfect Temperature</h3>
+                    <p>Cooked at the ideal temperature for that perfect texture</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Quality Check</h3>
+                    <p>Every crepe is inspected to ensure it meets our standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Hungry Yet?</h2>
+                <p>Ready to taste the magic? Book us for your next event or find us at a market near you</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Book Us</a>
+                    <a href="about.html" class="btn btn-outline btn-lg">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>About Vanoffee Crepes</h3>
+                    <p>We bring handcrafted, mouth-watering crepes to the streets. Our passion for great food and even greater vibes means every crepe is made with love, quality, and a sprinkle of joy.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <p>Email: hello@vanoffeecrepes.com</p>
+                    <p>Phone: 01234 567890</p>
+                    <p>Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vanoffee Crepes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Page transition effect
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('page-loaded');
+        });
+
+        // Gallery filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                        item.classList.add('animate-in');
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.gallery-item, .process-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Search functionality for both desktop and mobile
+        function initializeSearch(prefix) {
+            const searchToggle = document.getElementById(prefix + 'SearchToggle');
+            const searchClose = document.getElementById(prefix + 'SearchClose');
+            const searchInput = document.getElementById(prefix + 'SearchInput');
+            const searchContainer = document.querySelector('.' + prefix + '-search .search-container');
+
+            if (!searchToggle || !searchClose || !searchInput || !searchContainer) return;
+
+            function toggleSearch() {
+                if (prefix === 'mobile') {
+                    searchInput.focus();
+                } else {
+                    searchContainer.classList.toggle('active');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    } else {
+                        searchInput.value = '';
+                        hideSearchResults(searchContainer);
+                    }
+                }
+            }
+
+            searchToggle.addEventListener('click', toggleSearch);
+            searchClose.addEventListener('click', toggleSearch);
+
+            // Create search results dropdown
+            const searchResultsDropdown = document.createElement('div');
+            searchResultsDropdown.className = 'search-results-dropdown';
+            searchContainer.appendChild(searchResultsDropdown);
+
+            function showSearchResults(results, container) {
+                if (!results.length) {
+                    searchResultsDropdown.innerHTML = '<div class="search-result-item no-results">No results found</div>';
+                    searchResultsDropdown.style.display = 'block';
+                    return;
+                }
+                
+                searchResultsDropdown.innerHTML = results.map(r => `
+                    <div class="search-result-item">
+                        <div class="result-title">${r.title}</div>
+                        <div class="result-type">${r.type}</div>
+                    </div>
+                `).join('');
+                searchResultsDropdown.style.display = 'block';
+            }
+
+            function hideSearchResults(container) {
+                searchResultsDropdown.style.display = 'none';
+            }
+
+            searchInput.addEventListener('input', function() {
+                const q = this.value.trim().toLowerCase();
+                if (!q) {
+                    hideSearchResults(searchContainer);
+                    return;
+                }
+                const content = getSearchableContent();
+                const results = content.filter(item =>
+                    item.title.toLowerCase().includes(q) ||
+                    item.desc.toLowerCase().includes(q)
+                );
+                showSearchResults(results, searchContainer);
+            });
+
+            if (prefix === 'desktop') {
+                document.addEventListener('click', function(e) {
+                    if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
+                        toggleSearch();
+                    }
+                });
+            }
         }
-      });
-    });
-  </script>
+
+        // Initialize both desktop and mobile search
+        initializeSearch('desktop');
+        initializeSearch('mobile');
+
+        // Simple site search (searches visible text content on the page)
+        function getSearchableContent() {
+            let content = [];
+            // Gallery items
+            document.querySelectorAll('.gallery-item h3').forEach(h3 => {
+                content.push({
+                    type: 'Gallery',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Process items
+            document.querySelectorAll('.process-item h3').forEach(h3 => {
+                content.push({
+                    type: 'Process',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Footer
+            document.querySelectorAll('.footer h3').forEach(h3 => {
+                content.push({
+                    type: 'Footer',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            return content;
+        }
+    </script>
 </body>
 </html> 
