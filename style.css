@@ -166,41 +166,85 @@ p {
     }
 }
 
-/* Navigation */
+/* Navigation - Mobile First */
 .navbar {
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     transition: var(--transition);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand img {
+    height: 40px;
+    width: auto;
     transition: var(--transition);
+}
+
+@media (min-width: 768px) {
+    .navbar-brand img {
+        height: 50px;
+    }
 }
 
 .navbar-brand:hover img {
     transform: scale(1.05);
 }
 
+.navbar-nav {
+    align-items: center;
+}
+
 .navbar-nav .nav-link {
     font-weight: 600;
     color: var(--vc-brown) !important;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     position: relative;
     transition: var(--transition);
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav .nav-link {
+        margin: 0 1rem;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
 .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     left: 50%;
     width: 0;
     height: 2px;
     background: var(--vc-yellow);
     transition: var(--transition);
     transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+    .navbar-nav .nav-link::after {
+        bottom: -5px;
+    }
 }
 
 .navbar-nav .nav-link:hover::after,
@@ -212,15 +256,26 @@ p {
     color: var(--vc-yellow) !important;
 }
 
-/* Hero Section */
+.navbar-nav .nav-link:hover {
+    color: var(--vc-yellow) !important;
+}
+
+/* Hero Section - Mobile First */
 .hero-section {
-    min-height: 100vh;
+    min-height: var(--hero-min-height);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding-top: 70px;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding-top: 80px;
+    }
 }
 
 .hero-background {
@@ -3130,4 +3185,1084 @@ input, textarea {
 
 .char-count.at-limit {
     color: #dc3545;
+}
+
+/* Enhanced Mobile Responsiveness - Global Improvements */
+
+/* Mobile-first improvements for all sections */
+@media (max-width: 480px) {
+    /* General spacing adjustments */
+    .container, .container-fluid {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    /* Section padding adjustments */
+    .featured-section,
+    .why-us-section,
+    .gallery-preview,
+    .cta-section,
+    .origin-story-section,
+    .timeline-section,
+    .values-section,
+    .team-section,
+    .gallery-categories,
+    .main-gallery,
+    .behind-scenes,
+    .booking-options,
+    .why-choose-us,
+    .testimonials,
+    .contact-form-section,
+    .quick-contact,
+    .menu-categories,
+    .menu-grid-section,
+    .menu-info {
+        padding: 2rem 0.75rem;
+    }
+    
+    /* Typography scaling */
+    .section-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        margin-bottom: 0.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Button improvements for touch */
+    .btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Card improvements */
+    .product-card,
+    .gallery-item,
+    .feature-item,
+    .booking-card,
+    .benefit-item,
+    .testimonial-card,
+    .value-card,
+    .team-member,
+    .process-item,
+    .menu-item,
+    .info-item {
+        margin-bottom: 1rem;
+    }
+    
+    /* Grid adjustments */
+    .products-carousel,
+    .gallery-grid,
+    .feature-list,
+    .booking-grid,
+    .benefits-grid,
+    .testimonials-grid,
+    .contact-grid,
+    .menu-grid,
+    .info-grid,
+    .process-grid {
+        gap: 1rem;
+    }
+    
+    /* Form improvements */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 0.875rem;
+        min-height: 44px;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Navigation improvements */
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Search improvements */
+    .search-input {
+        font-size: 16px;
+        padding: 0.875rem;
+        min-height: 44px;
+    }
+    
+    /* Image scaling */
+    .product-image img,
+    .gallery-item img,
+    .menu-item-image img,
+    .member-image img,
+    .process-item img {
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+}
+
+/* Tablet improvements */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container, .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .featured-section,
+    .why-us-section,
+    .gallery-preview,
+    .cta-section,
+    .origin-story-section,
+    .timeline-section,
+    .values-section,
+    .team-section,
+    .gallery-categories,
+    .main-gallery,
+    .behind-scenes,
+    .booking-options,
+    .why-choose-us,
+    .testimonials,
+    .contact-form-section,
+    .quick-contact,
+    .menu-categories,
+    .menu-grid-section,
+    .menu-info {
+        padding: 2.5rem 1rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 5vw, 2.2rem);
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        min-height: 44px;
+    }
+}
+
+/* Large mobile and small tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container, .container-fluid {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .featured-section,
+    .why-us-section,
+    .gallery-preview,
+    .cta-section,
+    .origin-story-section,
+    .timeline-section,
+    .values-section,
+    .team-section,
+    .gallery-categories,
+    .main-gallery,
+    .behind-scenes,
+    .booking-options,
+    .why-choose-us,
+    .testimonials,
+    .contact-form-section,
+    .quick-contact,
+    .menu-categories,
+    .menu-grid-section,
+    .menu-info {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects on touch devices */
+    .product-card:hover,
+    .gallery-item:hover,
+    .feature-item:hover,
+    .booking-card:hover,
+    .benefit-item:hover,
+    .testimonial-card:hover,
+    .value-card:hover,
+    .team-member:hover,
+    .process-item:hover,
+    .menu-item:hover,
+    .info-item:hover {
+        transform: none;
+        box-shadow: var(--shadow-light);
+    }
+    
+    /* Increase touch targets */
+    .btn,
+    .nav-link,
+    .search-toggle,
+    .search-close,
+    .navbar-toggler {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improve form touch targets */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 44px;
+    }
+    
+    /* Improve category button touch targets */
+    .category-btn {
+        min-height: 44px;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+/* High DPI display improvements */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .navbar-brand img,
+    .product-image img,
+    .gallery-item img,
+    .menu-item-image img,
+    .member-image img,
+    .process-item img,
+    .crepe-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Landscape mobile improvements */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 50vh;
+        padding-top: 60px;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    }
+    
+    .hero-buttons {
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --vc-cream: #2d1b1b;
+        --vc-dark: #fefae0;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: var(--vc-cream);
+    }
+    
+    .navbar {
+        background: rgba(45, 45, 45, 0.95) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .hero-visual,
+    .scroll-indicator,
+    .btn,
+    .search-container,
+    .mobile-search {
+        display: none !important;
+    }
+    
+    .hero-section {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .hero-content {
+        color: black;
+    }
+    
+    .section-title {
+        color: black;
+    }
+    
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Desktop Optimizations - Large Screen Improvements */
+
+/* Desktop-specific improvements */
+@media (min-width: 1025px) {
+    /* Enhanced typography for desktop */
+    .section-title {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+    }
+    
+    .section-subtitle {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+    
+    /* Hero section desktop improvements */
+    .hero-section {
+        min-height: 80vh;
+        padding-top: 100px;
+    }
+    
+    .hero-title {
+        font-size: clamp(3rem, 6vw, 5rem);
+        margin-bottom: 2rem;
+        letter-spacing: -0.03em;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        margin-bottom: 3rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
+    }
+    
+    .hero-buttons {
+        gap: 1.5rem;
+    }
+    
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 60px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    /* Enhanced floating crepe for desktop */
+    .crepe-image {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    .crepe-glow {
+        width: 350px;
+        height: 350px;
+    }
+    
+    /* Navigation desktop improvements */
+    .navbar {
+        padding: 1.5rem 0;
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+    
+    .navbar-brand img {
+        height: 60px;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 1.5rem;
+        padding: 0.75rem 1.25rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+    
+    .navbar-nav .nav-link::after {
+        height: 3px;
+        bottom: -8px;
+    }
+    
+    /* Section spacing for desktop */
+    .featured-section,
+    .why-us-section,
+    .gallery-preview,
+    .cta-section,
+    .origin-story-section,
+    .timeline-section,
+    .values-section,
+    .team-section,
+    .gallery-categories,
+    .main-gallery,
+    .behind-scenes,
+    .booking-options,
+    .why-choose-us,
+    .testimonials,
+    .contact-form-section,
+    .quick-contact,
+    .menu-categories,
+    .menu-grid-section,
+    .menu-info {
+        padding: 6rem 2rem;
+    }
+    
+    /* Enhanced grid layouts for desktop */
+    .products-carousel {
+        gap: 2rem;
+        margin: 0 -1rem;
+    }
+    
+    .product-card {
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .product-image {
+        height: 280px;
+    }
+    
+    .product-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .product-info p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Gallery improvements for desktop */
+    .gallery-grid {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    .gallery-item {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .gallery-image {
+        height: 350px;
+    }
+    
+    /* Feature items desktop improvements */
+    .feature-list {
+        gap: 3rem;
+    }
+    
+    .feature-item {
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .feature-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-text h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-text p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* About page desktop improvements */
+    .about-hero-section {
+        min-height: 90vh;
+        padding-top: 120px;
+    }
+    
+    .hero-main-title {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+        letter-spacing: -0.03em;
+    }
+    
+    .hero-subtitle-line {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+    
+    .hero-subtitle-highlight {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+    
+    .hero-description p {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        max-width: 600px;
+    }
+    
+    .stat-preview {
+        padding: 2rem;
+        border-radius: 20px;
+    }
+    
+    .stat-preview .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-preview .stat-label {
+        font-size: 1.1rem;
+    }
+    
+    /* Timeline desktop improvements */
+    .timeline {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .timeline-content {
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .timeline-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .timeline-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+    
+    /* Values section desktop improvements */
+    .value-card {
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .value-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .value-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .value-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* Team section desktop improvements */
+    .team-member {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .team-member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .member-image {
+        height: 350px;
+    }
+    
+    .member-info {
+        padding: 2rem;
+    }
+    
+    .member-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .member-role {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .member-bio {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Gallery page desktop improvements */
+    .gallery-hero-section {
+        min-height: 80vh;
+        padding-top: 120px;
+    }
+    
+    .category-filters {
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+    }
+    
+    .category-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .overlay-content h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .overlay-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .price-tag {
+        font-size: 1.3rem;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    /* Contact page desktop improvements */
+    .contact-hero-section {
+        min-height: 80vh;
+        padding-top: 120px;
+    }
+    
+    .booking-grid {
+        gap: 2rem;
+    }
+    
+    .booking-card {
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .booking-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .booking-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .booking-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .booking-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .booking-features li {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .benefits-grid {
+        gap: 2rem;
+    }
+    
+    .benefit-item {
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .benefit-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .benefit-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .benefit-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .benefit-item p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .testimonials-grid {
+        gap: 2rem;
+    }
+    
+    .testimonial-card {
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .testimonial-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        font-style: italic;
+    }
+    
+    .author-info h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .author-info span {
+        font-size: 1rem;
+    }
+    
+    /* Form desktop improvements */
+    .form-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .form-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-header p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 12px;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+    
+    .form-submit .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .contact-grid {
+        gap: 2rem;
+    }
+    
+    .contact-item {
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .contact-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .contact-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-item p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* Menu page desktop improvements */
+    .menu-hero-section {
+        min-height: 80vh;
+        padding-top: 120px;
+    }
+    
+    .menu-grid {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+    
+    .menu-item {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .menu-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .menu-item-image {
+        height: 300px;
+    }
+    
+    .menu-item-details {
+        padding: 2rem;
+    }
+    
+    .menu-item-details h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .menu-item-details p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .menu-item-footer .price {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    
+    .info-grid {
+        gap: 2rem;
+    }
+    
+    .info-item {
+        padding: 2.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    
+    .info-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .info-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .info-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .info-item p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* Footer desktop improvements */
+    .footer {
+        padding: 4rem 2rem 2rem;
+    }
+    
+    .footer h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .footer a {
+        font-size: 1.1rem;
+    }
+    
+    .footer-bottom {
+        padding: 2rem 0;
+        margin-top: 3rem;
+        font-size: 1rem;
+    }
+}
+
+/* Ultra-wide desktop improvements */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-section {
+        min-height: 90vh;
+    }
+    
+    .hero-title {
+        font-size: clamp(4rem, 5vw, 6rem);
+    }
+    
+    .section-title {
+        font-size: clamp(3rem, 3vw, 4rem);
+    }
+    
+    .products-carousel {
+        gap: 3rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 3rem;
+    }
+    
+    .feature-list {
+        gap: 4rem;
+    }
+    
+    .booking-grid {
+        gap: 3rem;
+    }
+    
+    .benefits-grid {
+        gap: 3rem;
+    }
+    
+    .testimonials-grid {
+        gap: 3rem;
+    }
+    
+    .contact-grid {
+        gap: 3rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 3rem;
+    }
+    
+    .info-grid {
+        gap: 3rem;
+    }
+}
+
+/* Hover effects for desktop only */
+@media (hover: hover) and (pointer: fine) {
+    .product-card:hover,
+    .gallery-item:hover,
+    .feature-item:hover,
+    .booking-card:hover,
+    .benefit-item:hover,
+    .testimonial-card:hover,
+    .value-card:hover,
+    .team-member:hover,
+    .process-item:hover,
+    .menu-item:hover,
+    .info-item:hover,
+    .contact-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: var(--vc-yellow) !important;
+    }
+    
+    .category-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
 }
