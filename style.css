@@ -459,7 +459,7 @@ p {
 
 @media (max-width: 480px) {
     .scroll-indicator {
-        bottom: 1rem;
+        bottom: 2rem;
         padding: 0.5rem;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
     }
@@ -3413,12 +3413,12 @@ input, textarea {
     /* Hero section mobile improvements */
     .hero-section {
         min-height: 50vh;
-        padding-top: 60px;
-        padding-bottom: 2rem;
+        padding-top: 80px;
+        padding-bottom: 4rem;
     }
     
     .hero-content {
-        padding: 0 1rem;
+        padding: 2rem 1rem;
     }
     
     .hero-title {
@@ -3603,12 +3603,12 @@ input, textarea {
     /* Hero section tablet improvements */
     .hero-section {
         min-height: 55vh;
-        padding-top: 70px;
-        padding-bottom: 2.5rem;
+        padding-top: 90px;
+        padding-bottom: 4.5rem;
     }
     
     .hero-content {
-        padding: 0 1.5rem;
+        padding: 2.5rem 1.5rem;
     }
     
     .hero-title {
