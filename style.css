@@ -777,6 +777,60 @@ body.page-loaded {
     transform: scale(0.8);
 }
 
+/* Search Results Dropdown */
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    margin-top: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1001;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.search-result-item {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.search-result-item.no-results {
+    color: #999;
+    font-style: italic;
+    cursor: default;
+}
+
+.search-result-item.no-results:hover {
+    background-color: transparent;
+}
+
+.result-title {
+    font-weight: 600;
+    color: var(--vc-brown);
+    margin-bottom: 0.25rem;
+}
+
+.result-type {
+    font-size: 0.8rem;
+    color: var(--vc-yellow);
+    font-weight: 500;
+}
+
 /* Responsive search */
 @media (max-width: 768px) {
     .search-container.active .search-input-wrapper {
@@ -787,5 +841,133 @@ body.page-loaded {
 @media (max-width: 480px) {
     .search-container.active .search-input-wrapper {
         width: 200px;
+    }
+}
+
+/* Responsive search results */
+@media (max-width: 768px) {
+    .search-results-dropdown {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-results-dropdown {
+        width: 200px;
+    }
+}
+
+/* Mobile Navigation */
+.mobile-search {
+    margin-right: 1rem;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler:hover {
+    background: rgba(255, 200, 61, 0.1);
+    border-radius: 8px;
+}
+
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu layout */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        margin-top: 1rem;
+        padding: 1rem 0;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 0.25rem 0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        background: rgba(255, 200, 61, 0.1);
+        color: var(--vc-yellow) !important;
+    }
+    
+    .navbar-nav .nav-link.active {
+        background: var(--vc-yellow);
+        color: var(--vc-brown) !important;
+    }
+    
+    /* Mobile search positioning */
+    .mobile-search .search-container {
+        position: static;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+    
+    .mobile-search .search-input-wrapper {
+        position: static;
+        transform: none;
+        width: 100%;
+        opacity: 1;
+        margin-bottom: 1rem;
+    }
+    
+    .mobile-search .search-toggle {
+        display: none;
+    }
+    
+    .mobile-search .search-input {
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        background: #f8f9fa;
+    }
+    
+    .mobile-search .search-input:focus {
+        background: white;
+        border-color: var(--vc-yellow);
+        box-shadow: 0 0 0 0.2rem rgba(255, 200, 61, 0.25);
+    }
+    
+    .mobile-search .search-close {
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    /* Hide desktop search on mobile */
+    .desktop-search {
+        display: none !important;
+    }
+}
+
+/* Desktop navigation */
+@media (min-width: 992px) {
+    .mobile-search {
+        display: none !important;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0 1rem;
     }
 }

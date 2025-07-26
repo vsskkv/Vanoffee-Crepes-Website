@@ -16,23 +16,49 @@
             <a class="navbar-brand" href="index.html">
                 <img src="Images/Vanoffee Transparent.png" alt="Vanoffee Crepes" height="90" class="d-inline-block align-text-top">
             </a>
-            <div class="navbar-nav mx-auto">
-                <a class="nav-link active" href="index.html">HOME</a>
-                <a class="nav-link" href="about.html">ABOUT US</a>
-                <a class="nav-link" href="gallery.html">GALLERY</a>
-                <a class="nav-link" href="contact.html">CONTACT</a>
-            </div>
-            <div class="navbar-nav ms-auto">
+            
+            <!-- Mobile Search (visible only on mobile) -->
+            <div class="mobile-search d-lg-none">
                 <div class="search-container">
                     <div class="search-input-wrapper">
-                        <input type="text" class="search-input" id="navbarSearchInput" placeholder="Search menu, gallery, about..." />
-                        <button class="search-close" id="searchClose">
+                        <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search menu, gallery, about..." />
+                        <button class="search-close" id="mobileSearchClose">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-                    <button class="nav-link search-toggle" id="searchToggle" title="Search">
+                    <button class="nav-link search-toggle" id="mobileSearchToggle" title="Search">
                         <i class="fas fa-search"></i>
                     </button>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link active" href="index.html">HOME</a>
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                    <a class="nav-link" href="gallery.html">GALLERY</a>
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </div>
+                
+                <!-- Desktop Search (hidden on mobile) -->
+                <div class="desktop-search d-none d-lg-block">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="desktopSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="desktopSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="desktopSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -290,56 +316,86 @@
             observer.observe(el);
         });
 
-        // Search functionality
-        const searchToggle = document.getElementById('searchToggle');
-        const searchClose = document.getElementById('searchClose');
-        const searchInput = document.getElementById('navbarSearchInput');
-        const searchContainer = document.querySelector('.search-container');
+        // Search functionality for both desktop and mobile
+        function initializeSearch(prefix) {
+            const searchToggle = document.getElementById(prefix + 'SearchToggle');
+            const searchClose = document.getElementById(prefix + 'SearchClose');
+            const searchInput = document.getElementById(prefix + 'SearchInput');
+            const searchContainer = document.querySelector('.' + prefix + '-search .search-container');
 
-        function toggleSearch() {
-            searchContainer.classList.toggle('active');
-            if (searchContainer.classList.contains('active')) {
-                searchInput.focus();
-            } else {
-                searchInput.value = '';
-                hideSearchResults();
+            if (!searchToggle || !searchClose || !searchInput || !searchContainer) return;
+
+            function toggleSearch() {
+                if (prefix === 'mobile') {
+                    // For mobile, just focus the input since it's always visible
+                    searchInput.focus();
+                } else {
+                    // For desktop, toggle the expanding search
+                    searchContainer.classList.toggle('active');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    } else {
+                        searchInput.value = '';
+                        hideSearchResults(searchContainer);
+                    }
+                }
             }
-        }
 
-        searchToggle.addEventListener('click', toggleSearch);
-        searchClose.addEventListener('click', toggleSearch);
+            searchToggle.addEventListener('click', toggleSearch);
+            searchClose.addEventListener('click', toggleSearch);
 
-        // Close search when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
-                toggleSearch();
-            }
-        });
+            // Create search results dropdown
+            const searchResultsDropdown = document.createElement('div');
+            searchResultsDropdown.className = 'search-results-dropdown';
+            searchContainer.appendChild(searchResultsDropdown);
 
-        // Create search results dropdown
-        const searchResultsDropdown = document.createElement('div');
-        searchResultsDropdown.className = 'search-results-dropdown';
-        searchContainer.appendChild(searchResultsDropdown);
-
-        function showSearchResults(results) {
-            if (!results.length) {
-                searchResultsDropdown.innerHTML = '<div class="search-result-item no-results">No results found</div>';
+            function showSearchResults(results, container) {
+                if (!results.length) {
+                    searchResultsDropdown.innerHTML = '<div class="search-result-item no-results">No results found</div>';
+                    searchResultsDropdown.style.display = 'block';
+                    return;
+                }
+                
+                searchResultsDropdown.innerHTML = results.map(r => `
+                    <div class="search-result-item">
+                        <div class="result-title">${r.title}</div>
+                        <div class="result-type">${r.type}</div>
+                    </div>
+                `).join('');
                 searchResultsDropdown.style.display = 'block';
-                return;
             }
-            
-            searchResultsDropdown.innerHTML = results.map(r => `
-                <div class="search-result-item">
-                    <div class="result-title">${r.title}</div>
-                    <div class="result-type">${r.type}</div>
-                </div>
-            `).join('');
-            searchResultsDropdown.style.display = 'block';
+
+            function hideSearchResults(container) {
+                searchResultsDropdown.style.display = 'none';
+            }
+
+            searchInput.addEventListener('input', function() {
+                const q = this.value.trim().toLowerCase();
+                if (!q) {
+                    hideSearchResults(searchContainer);
+                    return;
+                }
+                const content = getSearchableContent();
+                const results = content.filter(item =>
+                    item.title.toLowerCase().includes(q) ||
+                    item.desc.toLowerCase().includes(q)
+                );
+                showSearchResults(results, searchContainer);
+            });
+
+            // Close search results when clicking outside (desktop only)
+            if (prefix === 'desktop') {
+                document.addEventListener('click', function(e) {
+                    if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
+                        toggleSearch();
+                    }
+                });
+            }
         }
 
-        function hideSearchResults() {
-            searchResultsDropdown.style.display = 'none';
-        }
+        // Initialize both desktop and mobile search
+        initializeSearch('desktop');
+        initializeSearch('mobile');
 
         // Simple site search (searches visible text content on the page)
         function getSearchableContent() {
@@ -383,27 +439,6 @@
             });
             return content;
         }
-
-        searchInput.addEventListener('input', function() {
-            const q = this.value.trim().toLowerCase();
-            if (!q) {
-                hideSearchResults();
-                return;
-            }
-            const content = getSearchableContent();
-            const results = content.filter(item =>
-                item.title.toLowerCase().includes(q) ||
-                item.desc.toLowerCase().includes(q)
-            );
-            showSearchResults(results);
-        });
-
-        // Close search results when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!searchContainer.contains(e.target)) {
-                hideSearchResults();
-            }
-        });
     </script>
 </body>
 </html>
