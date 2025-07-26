@@ -1,100 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Vanoffee Crepes</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Vanoffee Crepes - Our Story</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/Vanoffee Transparent.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/Vanoffee Transparent.png">
+    <link rel="apple-touch-icon" href="Images/Vanoffee Transparent.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-fade">
-  <header class="mb-5">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-        <!-- Logo on the left -->
-        <a class="navbar-brand" href="index.html">
-          <img src="Vanoffee Crepes.png" alt="Vanoffee Crepes" height="60" class="d-inline-block align-text-top">
-        </a>
-        <!-- Navigation menu in center -->
-        <div class="navbar-nav mx-auto">
-          <a class="nav-link" href="index.html">HOME</a>
-          <a class="nav-link active" href="about.html">ABOUT US</a>
-          <a class="nav-link" href="gallery.html">GALLERY</a>
-          <a class="nav-link" href="contact.html">CONTACT</a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/Vanoffee Transparent.png" alt="Vanoffee Crepes" height="90" class="d-inline-block align-text-top">
+            </a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Mobile Search (at top of hamburger menu) -->
+                <div class="mobile-search d-lg-none">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="mobileSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="mobileSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link active" href="about.html">ABOUT US</a>
+                    <a class="nav-link" href="gallery.html">GALLERY</a>
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </div>
+                
+                <!-- Desktop Search (hidden on mobile) -->
+                <div class="desktop-search d-none d-lg-block">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="desktopSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="desktopSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="desktopSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Icons on the right -->
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="#" title="Search">
-            <i class="fas fa-search"></i>
-          </a>
-        </div>
-      </div>
     </nav>
-  </header>
 
-  <main class="container my-5">
-    <div class="row align-items-center mb-5">
-      <div class="col-12 col-md-6 mb-4 mb-md-0">
-        <img src="https://source.unsplash.com/800x500/?crepe,vanoffee,brand" alt="About Vanoffee Crepes" class="img-fluid rounded shadow w-100" />
-      </div>
-      <div class="col-12 col-md-6">
-        <h2 class="mb-3" style="color: var(--vc-brown);">Our Story</h2>
-        <p class="lead">Vanoffee Crepes began with a simple idea: to bring handcrafted, mouth-watering crepes to the streets. Our passion for great food and even greater vibes means every crepe is made with love, quality, and a sprinkle of joy. Whether you crave sweet or savoury, we have something for everyone!</p>
-      </div>
-    </div>
-    <div class="row align-items-center mb-5 flex-md-row-reverse">
-      <div class="col-12 col-md-6 mb-4 mb-md-0">
-        <img src="https://source.unsplash.com/800x500/?crepe,coffee,community" alt="Vanoffee Community" class="img-fluid rounded shadow w-100" />
-      </div>
-      <div class="col-12 col-md-6">
-        <h2 class="mb-3" style="color: var(--vc-brown);">Our Mission</h2>
-        <p class="lead">We believe in indulgence, quality, and community. Our mission is to create memorable experiences, one crepe at a time. From local markets to special events, Vanoffee Crepes is all about sharing happiness and deliciousness with everyone we meet.</p>
-      </div>
-    </div>
-  </main>
-
-  <footer class="bg-light text-center py-3 mt-5">
-    <div class="container">
-      <div class="row text-start text-md-left">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <h5 class="mb-2">About Us</h5>
-          <p class="mb-0">Vanoffee Crepes started with a simple idea: to bring handcrafted, mouth-watering crepes to the streets. With a passion for great food and even greater vibes, we’re all about indulgence and quality in every bite.</p>
+    <!-- Hero Section -->
+    <section class="about-hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
         </div>
-        <div class="col-md-6">
-          <h5 class="mb-2">Contact</h5>
-          <p class="mb-1">Email: hello@vanoffeecrepes.com</p>
-          <p class="mb-1">Phone: 01234 567890</p>
-          <p class="mb-0">Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-title-container">
+                    <h1 class="hero-main-title">Our Story</h1>
+                    <div class="hero-subtitle-container">
+                        <span class="hero-subtitle-line">A Sweet Journey</span>
+                        <span class="hero-subtitle-highlight">From Dream to Reality</span>
+                    </div>
+                </div>
+                <div class="hero-description">
+                    <p>Discover how a simple passion for perfect crepes turned into a beloved local sensation</p>
+                </div>
+                <div class="hero-stats-preview">
+                    <div class="stat-preview">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Crepes Made</span>
+                    </div>
+                    <div class="stat-preview">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-crepe floating-1">
+                        <img src="Images/12.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-crepe floating-2">
+                        <img src="Images/13.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <hr class="my-4">
-      <p class="mb-0">&copy; 2025 Vanoffee Crepes. All rights reserved.</p>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Fade in on load
-    document.body.classList.add('page-fade');
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.style.opacity = 1;
-    });
-    // Fade out on navigation
-    document.querySelectorAll('a.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (this.href && !this.href.endsWith('#') && !this.classList.contains('active')) {
-          e.preventDefault();
-          document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location = this.href;
-          }, 500);
+    <!-- Origin Story -->
+    <section class="origin-story-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="story-content">
+                        <h2 class="section-title">The Beginning</h2>
+                        <p class="story-text">It all started in a tiny kitchen in 2020, during the most unexpected of times. Sarah, our founder, found herself with an abundance of time and a craving for the perfect crepe - the kind she'd tasted during her travels through France.</p>
+                        <p class="story-text">What began as a way to bring joy to her family quickly became something bigger. Friends started asking for her "magical crepes," and neighbors would knock on her door, drawn by the irresistible aroma wafting through the street.</p>
+                        <div class="story-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">1000+</div>
+                                <div class="stat-label">Crepes Made</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Happy Customers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="story-image">
+                        <img src="Images/12.jpg" alt="The Beginning" class="img-fluid rounded shadow">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title text-center">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h3>The Kitchen Experiment</h3>
+                        <p>Sarah's first perfect crepe recipe was born in her home kitchen, inspired by memories of Parisian street vendors.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h3>First Market Stall</h3>
+                        <p>With a portable crepe maker and a dream, Vanoffee Crepes made its debut at the local farmers' market.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3>Growing Community</h3>
+                        <p>Word spread like butter on a hot pan. We became a regular fixture at events, festivals, and private parties.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Expanding Horizons</h3>
+                        <p>Today, we're serving up happiness at weddings, corporate events, and bringing joy to communities across the region.</p>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title text-center">What Drives Us</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Passion</h3>
+                        <p>Every crepe is crafted with love and attention to detail. We believe that food made with passion tastes better.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Quality</h3>
+                        <p>We source only the finest ingredients from local suppliers. Fresh, organic, and always delicious.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Community</h3>
+                        <p>We're not just making crepes - we're building connections and creating memorable experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title text-center">Meet the Team</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="Images/13.jpg" alt="Sarah - Founder" class="img-fluid rounded">
+                        </div>
+                        <div class="member-info">
+                            <h3>Sarah Johnson</h3>
+                            <p class="member-role">Founder & Master Crepe Maker</p>
+                            <p class="member-bio">The heart and soul of Vanoffee Crepes. Sarah's passion for perfect crepes and warm hospitality makes every event special.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="Images/14.jpg" alt="Mike - Operations" class="img-fluid rounded">
+                        </div>
+                        <div class="member-info">
+                            <h3>Mike Chen</h3>
+                            <p class="member-role">Operations & Event Coordinator</p>
+                            <p class="member-bio">Mike ensures every event runs smoothly, from intimate gatherings to large corporate functions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Experience the Magic?</h2>
+                <p>Let us bring the joy of handcrafted crepes to your next event</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Book Us</a>
+                    <a href="gallery.html" class="btn btn-outline btn-lg">See Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>About Vanoffee Crepes</h3>
+                    <p>We bring handcrafted, mouth-watering crepes to the streets. Our passion for great food and even greater vibes means every crepe is made with love, quality, and a sprinkle of joy.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <p>Email: hello@vanoffeecrepes.com</p>
+                    <p>Phone: 01234 567890</p>
+                    <p>Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vanoffee Crepes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Page transition effect
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('page-loaded');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.value-card, .team-member, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Search functionality for both desktop and mobile
+        function initializeSearch(prefix) {
+            const searchToggle = document.getElementById(prefix + 'SearchToggle');
+            const searchClose = document.getElementById(prefix + 'SearchClose');
+            const searchInput = document.getElementById(prefix + 'SearchInput');
+            const searchContainer = document.querySelector('.' + prefix + '-search .search-container');
+
+            if (!searchToggle || !searchClose || !searchInput || !searchContainer) return;
+
+            function toggleSearch() {
+                if (prefix === 'mobile') {
+                    searchInput.focus();
+                } else {
+                    searchContainer.classList.toggle('active');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    } else {
+                        searchInput.value = '';
+                        hideSearchResults(searchContainer);
+                    }
+                }
+            }
+
+            searchToggle.addEventListener('click', toggleSearch);
+            searchClose.addEventListener('click', toggleSearch);
+
+            // Create search results dropdown
+            const searchResultsDropdown = document.createElement('div');
+            searchResultsDropdown.className = 'search-results-dropdown';
+            searchContainer.appendChild(searchResultsDropdown);
+
+            function showSearchResults(results, container) {
+                if (!results.length) {
+                    searchResultsDropdown.innerHTML = '<div class="search-result-item no-results">No results found</div>';
+                    searchResultsDropdown.style.display = 'block';
+                    return;
+                }
+                
+                searchResultsDropdown.innerHTML = results.map(r => `
+                    <div class="search-result-item">
+                        <div class="result-title">${r.title}</div>
+                        <div class="result-type">${r.type}</div>
+                    </div>
+                `).join('');
+                searchResultsDropdown.style.display = 'block';
+            }
+
+            function hideSearchResults(container) {
+                searchResultsDropdown.style.display = 'none';
+            }
+
+            searchInput.addEventListener('input', function() {
+                const q = this.value.trim().toLowerCase();
+                if (!q) {
+                    hideSearchResults(searchContainer);
+                    return;
+                }
+                const content = getSearchableContent();
+                const results = content.filter(item =>
+                    item.title.toLowerCase().includes(q) ||
+                    item.desc.toLowerCase().includes(q)
+                );
+                showSearchResults(results, searchContainer);
+            });
+
+            if (prefix === 'desktop') {
+                document.addEventListener('click', function(e) {
+                    if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
+                        toggleSearch();
+                    }
+                });
+            }
         }
-      });
-    });
-  </script>
+
+        // Initialize both desktop and mobile search
+        initializeSearch('desktop');
+        initializeSearch('mobile');
+
+        // Simple site search (searches visible text content on the page)
+        function getSearchableContent() {
+            let content = [];
+            // Team members
+            document.querySelectorAll('.team-member h3').forEach(h3 => {
+                content.push({
+                    type: 'Team',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Values
+            document.querySelectorAll('.value-card h3').forEach(h3 => {
+                content.push({
+                    type: 'Values',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Timeline
+            document.querySelectorAll('.timeline-item h3').forEach(h3 => {
+                content.push({
+                    type: 'Timeline',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Footer
+            document.querySelectorAll('.footer h3').forEach(h3 => {
+                content.push({
+                    type: 'Footer',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            return content;
+        }
+    </script>
 </body>
 </html> 
