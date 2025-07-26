@@ -1,105 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Vanoffee Crepes</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Book Us - Vanoffee Crepes</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/Vanoffee Transparent.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/Vanoffee Transparent.png">
+    <link rel="apple-touch-icon" href="Images/Vanoffee Transparent.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-fade">
-  <header class="mb-5">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-        <!-- Logo on the left -->
-        <a class="navbar-brand" href="index.html">
-          <img src="Vanoffee Crepes.png" alt="Vanoffee Crepes" height="60" class="d-inline-block align-text-top">
-        </a>
-        <!-- Navigation menu in center -->
-        <div class="navbar-nav mx-auto">
-          <a class="nav-link" href="index.html">HOME</a>
-          <a class="nav-link" href="about.html">ABOUT US</a>
-          <a class="nav-link" href="gallery.html">GALLERY</a>
-          <a class="nav-link active" href="contact.html">CONTACT</a>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/Vanoffee Transparent.png" alt="Vanoffee Crepes" height="90" class="d-inline-block align-text-top">
+            </a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Mobile Search (at top of hamburger menu) -->
+                <div class="mobile-search d-lg-none">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="mobileSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="mobileSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                    <a class="nav-link" href="gallery.html">GALLERY</a>
+                    <a class="nav-link active" href="contact.html">CONTACT</a>
+                </div>
+                
+                <!-- Desktop Search (hidden on mobile) -->
+                <div class="desktop-search d-none d-lg-block">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" class="search-input" id="desktopSearchInput" placeholder="Search menu, gallery, about..." />
+                            <button class="search-close" id="desktopSearchClose">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <button class="nav-link search-toggle" id="desktopSearchToggle" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Icons on the right -->
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="#" title="Search">
-            <i class="fas fa-search"></i>
-          </a>
-        </div>
-      </div>
     </nav>
-  </header>
 
-  <main class="container my-5">
-    <section class="contact my-5" id="contact">
-      <h2 class="text-center mb-4">Contact Us</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <p class="text-center">Email: hello@vanoffeecrepes.com</p>
-          <p class="text-center">Phone: 01234 567890</p>
-          <p class="text-center">Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your Name">
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Your Email">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="background-color: #c38e70; border: none;">Send Message</button>
-          </form>
+    <!-- Hero Section -->
+    <section class="contact-hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
         </div>
-      </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-title-container">
+                    <h1 class="hero-main-title">Book Our Stall</h1>
+                    <div class="hero-subtitle-container">
+                        <span class="hero-subtitle-line">Bring the Magic</span>
+                        <span class="hero-subtitle-highlight">To Your Event</span>
+                    </div>
+                </div>
+                <div class="hero-description">
+                    <p>Transform any gathering into an unforgettable experience with our handcrafted crepes. Perfect for corporate events, parties, markets, and celebrations!</p>
+                </div>
+                <div class="hero-stats-preview">
+                    <div class="stat-preview">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Events Served</span>
+                    </div>
+                    <div class="stat-preview">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-crepe floating-1">
+                        <img src="Images/13.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-crepe floating-2">
+                        <img src="Images/14.jpg" alt="Delicious Crepe" class="crepe-image">
+                    </div>
+                    <div class="floating-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="bg-light text-center py-3 mt-5">
-    <div class="container">
-      <div class="row text-start text-md-left">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <h5 class="mb-2">About Us</h5>
-          <p class="mb-0">Vanoffee Crepes started with a simple idea: to bring handcrafted, mouth-watering crepes to the streets. With a passion for great food and even greater vibes, we’re all about indulgence and quality in every bite.</p>
-        </div>
-        <div class="col-md-6">
-          <h5 class="mb-2">Contact</h5>
-          <p class="mb-1">Email: hello@vanoffeecrepes.com</p>
-          <p class="mb-1">Phone: 01234 567890</p>
-          <p class="mb-0">Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
-        </div>
-      </div>
-      <hr class="my-4">
-      <p class="mb-0">&copy; 2025 Vanoffee Crepes. All rights reserved.</p>
-    </div>
-  </footer>
+    <!-- Booking Options -->
+    <section class="booking-options">
+        <div class="container">
+            <h2 class="section-title text-center">Perfect For Any Occasion</h2>
+            <p class="section-subtitle text-center">From corporate lunches to birthday parties, we bring the crepe magic wherever you need us</p>
+            
+            <div class="booking-grid">
+                <div class="booking-card">
+                    <div class="booking-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Private Parties</h3>
+                    <p>Make your birthday, anniversary, or special celebration unforgettable with our crepe station.</p>
+                    <ul class="booking-features">
+                        <li><i class="fas fa-check"></i> Custom menu options</li>
+                        <li><i class="fas fa-check"></i> Interactive experience</li>
+                        <li><i class="fas fa-check"></i> Dietary accommodations</li>
+                        <li><i class="fas fa-check"></i> Memorable moments</li>
+                    </ul>
+                    <div class="booking-cta">
+                        <a href="#contact-form" class="btn btn-primary">Book Private Party</a>
+                    </div>
+                </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Fade in on load
-    document.body.classList.add('page-fade');
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.style.opacity = 1;
-    });
-    // Fade out on navigation
-    document.querySelectorAll('a.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (this.href && !this.href.endsWith('#') && !this.classList.contains('active')) {
-          e.preventDefault();
-          document.body.classList.add('fade-out');
-          setTimeout(() => {
-            window.location = this.href;
-          }, 500);
+                <div class="booking-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="booking-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Events</h3>
+                    <p>Elevate your office lunches, team building events, and client meetings with our premium crepe service.</p>
+                    <ul class="booking-features">
+                        <li><i class="fas fa-check"></i> Professional setup</li>
+                        <li><i class="fas fa-check"></i> Dietary options available</li>
+                        <li><i class="fas fa-check"></i> Quick service</li>
+                        <li><i class="fas fa-check"></i> Clean presentation</li>
+                    </ul>
+                    <div class="booking-cta">
+                        <a href="#contact-form" class="btn btn-primary">Book Corporate Event</a>
+                    </div>
+                </div>
+
+                <div class="booking-card">
+                    <div class="booking-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Markets & Fairs</h3>
+                    <p>Add a delicious attraction to your market, fair, or community event with our mobile crepe stall.</p>
+                    <ul class="booking-features">
+                        <li><i class="fas fa-check"></i> Mobile setup</li>
+                        <li><i class="fas fa-check"></i> High volume capacity</li>
+                        <li><i class="fas fa-check"></i> Weather resistant</li>
+                        <li><i class="fas fa-check"></i> Crowd pleaser</li>
+                    </ul>
+                    <div class="booking-cta">
+                        <a href="#contact-form" class="btn btn-primary">Book Market Stall</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title text-center">Why Event Planners Love Us</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Reliable & Punctual</h3>
+                    <p>We arrive on time, set up quickly, and ensure your event runs smoothly from start to finish.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Fresh & Delicious</h3>
+                    <p>Every crepe is made fresh to order with premium ingredients that your guests will love.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Crowd Favorite</h3>
+                    <p>Our crepes are universally loved - perfect for diverse groups and dietary preferences.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Fully Insured</h3>
+                    <p>We're fully insured and food safety certified, giving you complete peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title text-center">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Vanoffee Crepes transformed our company picnic! The team loved the interactive experience and the crepes were absolutely delicious. Highly recommend!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>HR Manager, TechCorp</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Perfect addition to our wedding reception! The crepe station was a huge hit with our guests. Professional, delicious, and made our special day even better."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael & Emma</h4>
+                            <span>Newlyweds</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Amazing service at our community fair! The stall attracted huge crowds and the crepes were the talk of the event. Will definitely book again!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>David Chen</h4>
+                            <span>Event Coordinator, City Council</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Ready to Book?</h2>
+                    <p>Tell us about your event and we'll get back to you within 24 hours with a custom quote!</p>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">Event Type *</label>
+                            <select id="event-type" name="event-type" required>
+                                <option value="">Select Event Type</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="private-party">Private Party</option>
+                                <option value="market-fair">Market/Fair</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-date">Event Date *</label>
+                            <input type="date" id="event-date" name="event-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Expected Guests</label>
+                            <select id="guests" name="guests">
+                                <option value="">Select Guest Count</option>
+                                <option value="10-25">10-25 people</option>
+                                <option value="26-50">26-50 people</option>
+                                <option value="51-100">51-100 people</option>
+                                <option value="100+">100+ people</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="event-location">Event Location</label>
+                        <input type="text" id="event-location" name="event-location" placeholder="Address or venue name">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Tell us about your event *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe your event, any special requirements, dietary needs, or questions you have..." required></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Booking Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>hello@vanoffeecrepes.com</p>
+                    <p>We respond within 24 hours</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>01234 567890</p>
+                    <p>Mon-Fri 9AM-6PM</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Follow Us</h3>
+                    <p>@vanoffeecrepes</p>
+                    <p>See our latest events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>About Vanoffee Crepes</h3>
+                    <p>We bring handcrafted, mouth-watering crepes to the streets. Our passion for great food and even greater vibes means every crepe is made with love, quality, and a sprinkle of joy.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <p>Email: hello@vanoffeecrepes.com</p>
+                    <p>Phone: 01234 567890</p>
+                    <p>Follow us on Instagram: <a href="#">@vanoffeecrepes</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vanoffee Crepes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Page transition effect
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('page-loaded');
+        });
+
+        // Form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message (in real implementation, this would send to server)
+            alert('Thank you for your booking request! We\'ll get back to you within 24 hours with a custom quote.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.booking-card, .benefit-item, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Search functionality for both desktop and mobile
+        function initializeSearch(prefix) {
+            const searchToggle = document.getElementById(prefix + 'SearchToggle');
+            const searchClose = document.getElementById(prefix + 'SearchClose');
+            const searchInput = document.getElementById(prefix + 'SearchInput');
+            const searchContainer = document.querySelector('.' + prefix + '-search .search-container');
+
+            if (!searchToggle || !searchClose || !searchInput || !searchContainer) return;
+
+            function toggleSearch() {
+                if (prefix === 'mobile') {
+                    searchInput.focus();
+                } else {
+                    searchContainer.classList.toggle('active');
+                    if (searchContainer.classList.contains('active')) {
+                        searchInput.focus();
+                    } else {
+                        searchInput.value = '';
+                        hideSearchResults(searchContainer);
+                    }
+                }
+            }
+
+            searchToggle.addEventListener('click', toggleSearch);
+            searchClose.addEventListener('click', toggleSearch);
+
+            // Create search results dropdown
+            const searchResultsDropdown = document.createElement('div');
+            searchResultsDropdown.className = 'search-results-dropdown';
+            searchContainer.appendChild(searchResultsDropdown);
+
+            function showSearchResults(results, container) {
+                if (!results.length) {
+                    searchResultsDropdown.innerHTML = '<div class="search-result-item no-results">No results found</div>';
+                    searchResultsDropdown.style.display = 'block';
+                    return;
+                }
+                
+                searchResultsDropdown.innerHTML = results.map(r => `
+                    <div class="search-result-item">
+                        <div class="result-title">${r.title}</div>
+                        <div class="result-type">${r.type}</div>
+                    </div>
+                `).join('');
+                searchResultsDropdown.style.display = 'block';
+            }
+
+            function hideSearchResults(container) {
+                searchResultsDropdown.style.display = 'none';
+            }
+
+            searchInput.addEventListener('input', function() {
+                const q = this.value.trim().toLowerCase();
+                if (!q) {
+                    hideSearchResults(searchContainer);
+                    return;
+                }
+                const content = getSearchableContent();
+                const results = content.filter(item =>
+                    item.title.toLowerCase().includes(q) ||
+                    item.desc.toLowerCase().includes(q)
+                );
+                showSearchResults(results, searchContainer);
+            });
+
+            if (prefix === 'desktop') {
+                document.addEventListener('click', function(e) {
+                    if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
+                        toggleSearch();
+                    }
+                });
+            }
         }
-      });
-    });
-  </script>
+
+        // Initialize both desktop and mobile search
+        initializeSearch('desktop');
+        initializeSearch('mobile');
+
+        // Simple site search (searches visible text content on the page)
+        function getSearchableContent() {
+            let content = [];
+            // Booking cards
+            document.querySelectorAll('.booking-card h3').forEach(h3 => {
+                content.push({
+                    type: 'Booking',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Benefits
+            document.querySelectorAll('.benefit-item h3').forEach(h3 => {
+                content.push({
+                    type: 'Benefits',
+                    title: h3.textContent,
+                    desc: h3.nextElementSibling?.textContent || '',
+                    el: h3
+                });
+            });
+            // Testimonials
+            document.querySelectorAll('.testimonial-card h4').forEach(h4 => {
+                content.push({
+                    type: 'Testimonial',
+                    title: h4.textContent,
+                    desc: h4.parentElement.previousElementSibling?.textContent || '',
+                    el: h4
+                });
+            });
+            return content;
+        }
+    </script>
 </body>
 </html> 
