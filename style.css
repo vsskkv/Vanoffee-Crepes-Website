@@ -30,7 +30,7 @@
     :root {
         --container-padding: 0.75rem;
         --section-padding: 2rem 0.75rem;
-        --hero-min-height: 70vh;
+        --hero-min-height: 60vh;
     }
 }
 
@@ -38,7 +38,7 @@
     :root {
         --container-padding: 1rem;
         --section-padding: 2.5rem 1rem;
-        --hero-min-height: 65vh;
+        --hero-min-height: 55vh;
     }
 }
 
@@ -3197,6 +3197,43 @@ input, textarea {
         padding-right: 0.75rem;
     }
     
+    /* Hero section mobile improvements */
+    .hero-section {
+        min-height: 50vh;
+        padding-top: 60px;
+        padding-bottom: 2rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        margin-bottom: 0.75rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+    
+    .hero-buttons {
+        gap: 0.75rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
     /* Section padding adjustments */
     .featured-section,
     .why-us-section,
@@ -3316,6 +3353,41 @@ input, textarea {
     .container, .container-fluid {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    
+    /* Hero section tablet improvements */
+    .hero-section {
+        min-height: 55vh;
+        padding-top: 70px;
+        padding-bottom: 2.5rem;
+    }
+    
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.2rem, 7vw, 3rem);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 3vw, 1.3rem);
+        margin-bottom: 2rem;
+        line-height: 1.4;
+    }
+    
+    .hero-buttons {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        min-width: 160px;
     }
     
     .featured-section,
@@ -3737,6 +3809,109 @@ input, textarea {
         padding-top: 120px;
     }
     
+    /* About page mobile improvements */
+    @media (max-width: 480px) {
+        .about-hero-section {
+            min-height: 60vh;
+            padding-top: 70px;
+            padding-bottom: 2rem;
+        }
+        
+        .about-hero-section .hero-content {
+            padding: 0 1rem;
+        }
+        
+        .hero-main-title {
+            font-size: clamp(2rem, 8vw, 2.8rem);
+            margin-bottom: 0.75rem;
+        }
+        
+        .hero-subtitle-container {
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle-line {
+            font-size: clamp(1rem, 4vw, 1.3rem);
+        }
+        
+        .hero-subtitle-highlight {
+            font-size: clamp(1.2rem, 5vw, 1.6rem);
+        }
+        
+        .hero-description p {
+            font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+            line-height: 1.5;
+        }
+        
+        .hero-stats-preview {
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-preview {
+            padding: 1rem;
+        }
+        
+        .stat-preview .stat-number {
+            font-size: 1.8rem;
+        }
+        
+        .stat-preview .stat-label {
+            font-size: 0.8rem;
+        }
+        
+        .hero-visual {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 481px) and (max-width: 768px) {
+        .about-hero-section {
+            min-height: 65vh;
+            padding-top: 80px;
+            padding-bottom: 2.5rem;
+        }
+        
+        .about-hero-section .hero-content {
+            padding: 0 1.5rem;
+        }
+        
+        .hero-main-title {
+            font-size: clamp(2.5rem, 7vw, 3.2rem);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle-line {
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+        }
+        
+        .hero-subtitle-highlight {
+            font-size: clamp(1.4rem, 5vw, 1.8rem);
+        }
+        
+        .hero-description p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            line-height: 1.6;
+        }
+        
+        .hero-stats-preview {
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-preview {
+            padding: 1.25rem;
+        }
+        
+        .stat-preview .stat-number {
+            font-size: 2rem;
+        }
+        
+        .stat-preview .stat-label {
+            font-size: 0.9rem;
+        }
+    }
+    
     .hero-main-title {
         font-size: clamp(3.5rem, 6vw, 5rem);
         letter-spacing: -0.03em;
@@ -3867,6 +4042,31 @@ input, textarea {
         padding-top: 120px;
     }
     
+    /* Gallery page mobile improvements */
+    @media (max-width: 480px) {
+        .gallery-hero-section {
+            min-height: 50vh;
+            padding-top: 70px;
+            padding-bottom: 2rem;
+        }
+        
+        .gallery-hero-section .hero-content {
+            padding: 0 1rem;
+        }
+    }
+    
+    @media (min-width: 481px) and (max-width: 768px) {
+        .gallery-hero-section {
+            min-height: 55vh;
+            padding-top: 80px;
+            padding-bottom: 2.5rem;
+        }
+        
+        .gallery-hero-section .hero-content {
+            padding: 0 1.5rem;
+        }
+    }
+    
     .category-filters {
         gap: 1.5rem;
         margin-bottom: 4rem;
@@ -3900,6 +4100,31 @@ input, textarea {
     .contact-hero-section {
         min-height: 80vh;
         padding-top: 120px;
+    }
+    
+    /* Contact page mobile improvements */
+    @media (max-width: 480px) {
+        .contact-hero-section {
+            min-height: 50vh;
+            padding-top: 70px;
+            padding-bottom: 2rem;
+        }
+        
+        .contact-hero-section .hero-content {
+            padding: 0 1rem;
+        }
+    }
+    
+    @media (min-width: 481px) and (max-width: 768px) {
+        .contact-hero-section {
+            min-height: 55vh;
+            padding-top: 80px;
+            padding-bottom: 2.5rem;
+        }
+        
+        .contact-hero-section .hero-content {
+            padding: 0 1.5rem;
+        }
     }
     
     .booking-grid {
@@ -4078,6 +4303,31 @@ input, textarea {
     .menu-hero-section {
         min-height: 80vh;
         padding-top: 120px;
+    }
+    
+    /* Menu page mobile improvements */
+    @media (max-width: 480px) {
+        .menu-hero-section {
+            min-height: 50vh;
+            padding-top: 70px;
+            padding-bottom: 2rem;
+        }
+        
+        .menu-hero-section .hero-content {
+            padding: 0 1rem;
+        }
+    }
+    
+    @media (min-width: 481px) and (max-width: 768px) {
+        .menu-hero-section {
+            min-height: 55vh;
+            padding-top: 80px;
+            padding-bottom: 2.5rem;
+        }
+        
+        .menu-hero-section .hero-content {
+            padding: 0 1.5rem;
+        }
     }
     
     .menu-grid {
