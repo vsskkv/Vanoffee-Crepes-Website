@@ -538,20 +538,7 @@
             }
         });
         
-        // Scroll indicator functionality
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-        if (scrollIndicator) {
-            scrollIndicator.addEventListener('click', function() {
-                const heroSection = document.querySelector('.gallery-hero-section');
-                const heroHeight = heroSection.offsetHeight;
-                const scrollTarget = heroHeight * 0.8; // Scroll to 80% of hero height
-                
-                window.scrollTo({
-                    top: scrollTarget,
-                    behavior: 'smooth'
-                });
-            });
-        }
+
     </script>
 </body>
 </html> 
