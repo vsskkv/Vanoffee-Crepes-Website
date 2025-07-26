@@ -665,6 +665,50 @@
             }, 5000);
         }
 
+        // Smart navigation hide/show on scroll
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+        const scrollThreshold = 100; // Minimum scroll distance before hiding
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Only hide/show if scrolled more than threshold
+            if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+                if (scrollTop > lastScrollTop && scrollTop > 200) {
+                    // Scrolling down - hide navbar
+                    navbar.classList.add('navbar-hidden');
+                } else {
+                    // Scrolling up - show navbar
+                    navbar.classList.remove('navbar-hidden');
+                }
+                lastScrollTop = scrollTop;
+            }
+        });
+        
+        // Show navbar when at top of page
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop <= 100) {
+                navbar.classList.remove('navbar-hidden');
+            }
+        });
+        
+        // Scroll indicator functionality
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', function() {
+                const heroSection = document.querySelector('.contact-hero-section');
+                const heroHeight = heroSection.offsetHeight;
+                const scrollTarget = heroHeight * 0.8; // Scroll to 80% of hero height
+                
+                window.scrollTo({
+                    top: scrollTarget,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
