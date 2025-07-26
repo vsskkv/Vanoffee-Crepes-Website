@@ -710,13 +710,13 @@ p {
 
 /* Footer */
 .footer {
-    background: var(--vc-dark);
-    color: white;
+    background: var(--vc-yellow);
+    color: var(--vc-brown);
     padding: 4rem 0 2rem;
 }
 
 .footer h3 {
-    color: var(--vc-yellow);
+    color: var(--vc-brown);
     margin-bottom: 1rem;
 }
 
@@ -726,8 +726,9 @@ p {
 }
 
 .footer a {
-    color: var(--vc-yellow);
+    color: var(--vc-brown);
     text-decoration: none;
+    font-weight: 600;
 }
 
 .footer a:hover {
@@ -2575,6 +2576,8 @@ input, textarea {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    align-items: start;
+    justify-items: center;
 }
 
 .testimonial-card {
@@ -2586,6 +2589,13 @@ input, textarea {
     opacity: 0;
     transform: translateY(30px);
     border-left: 4px solid var(--vc-yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 250px;
+    text-align: center;
 }
 
 .testimonial-card.animate-in {
@@ -2610,8 +2620,11 @@ input, textarea {
 
 .testimonial-author {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 .author-info h4 {
@@ -2628,6 +2641,19 @@ input, textarea {
 .rating {
     color: var(--vc-yellow);
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.rating i {
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 /* Contact Form */
