@@ -2201,7 +2201,7 @@ input, textarea {
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    padding-top: 120px;
+    padding-top: 140px;
 }
 
 .gallery-hero-section .hero-background {
@@ -2529,7 +2529,7 @@ input, textarea {
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    padding-top: 120px;
+    padding-top: 140px;
 }
 
 .contact-hero-section .hero-background {
@@ -3093,7 +3093,7 @@ input, textarea {
     justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    padding-top: 120px;
+    padding-top: 140px;
 }
 
 .menu-hero-section .hero-background {
@@ -4192,11 +4192,26 @@ input, textarea {
         padding-top: 120px;
     }
     
+    .menu-hero-section,
+    .gallery-hero-section,
+    .contact-hero-section {
+        min-height: 90vh;
+        padding-top: 140px;
+    }
+    
     /* About page mobile improvements */
     @media (max-width: 480px) {
         .about-hero-section {
             min-height: 60vh;
             padding-top: 70px;
+            padding-bottom: 2rem;
+        }
+        
+        .menu-hero-section,
+        .gallery-hero-section,
+        .contact-hero-section {
+            min-height: 60vh;
+            padding-top: 90px;
             padding-bottom: 2rem;
         }
         
@@ -4252,6 +4267,14 @@ input, textarea {
         .about-hero-section {
             min-height: 65vh;
             padding-top: 80px;
+            padding-bottom: 2.5rem;
+        }
+        
+        .menu-hero-section,
+        .gallery-hero-section,
+        .contact-hero-section {
+            min-height: 65vh;
+            padding-top: 100px;
             padding-bottom: 2.5rem;
         }
         
@@ -4429,7 +4452,7 @@ input, textarea {
     @media (max-width: 480px) {
         .gallery-hero-section {
             min-height: 50vh;
-            padding-top: 70px;
+            padding-top: 90px;
             padding-bottom: 2rem;
         }
         
@@ -4441,7 +4464,7 @@ input, textarea {
     @media (min-width: 481px) and (max-width: 768px) {
         .gallery-hero-section {
             min-height: 55vh;
-            padding-top: 80px;
+            padding-top: 100px;
             padding-bottom: 2.5rem;
         }
         
@@ -4489,7 +4512,7 @@ input, textarea {
     @media (max-width: 480px) {
         .contact-hero-section {
             min-height: 50vh;
-            padding-top: 70px;
+            padding-top: 90px;
             padding-bottom: 2rem;
         }
         
@@ -4501,7 +4524,7 @@ input, textarea {
     @media (min-width: 481px) and (max-width: 768px) {
         .contact-hero-section {
             min-height: 55vh;
-            padding-top: 80px;
+            padding-top: 100px;
             padding-bottom: 2.5rem;
         }
         
@@ -4692,7 +4715,7 @@ input, textarea {
     @media (max-width: 480px) {
         .menu-hero-section {
             min-height: 50vh;
-            padding-top: 70px;
+            padding-top: 90px;
             padding-bottom: 2rem;
         }
         
@@ -4704,7 +4727,7 @@ input, textarea {
     @media (min-width: 481px) and (max-width: 768px) {
         .menu-hero-section {
             min-height: 55vh;
-            padding-top: 80px;
+            padding-top: 100px;
             padding-bottom: 2.5rem;
         }
         
