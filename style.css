@@ -288,7 +288,7 @@ p {
 /* Additional padding for smaller desktop screens */
 @media (min-width: 768px) and (max-width: 1200px) {
     .hero-section {
-        padding-top: 100px;
+        padding-top: 120px;
         padding-bottom: 60px;
     }
     
@@ -304,12 +304,20 @@ p {
     .hero-subtitle {
         font-size: clamp(1.1rem, 2vw, 1.3rem);
     }
+    
+    /* Specific adjustments for menu, gallery, and contact hero sections on smaller laptops */
+    .menu-hero-section,
+    .gallery-hero-section,
+    .contact-hero-section {
+        padding-top: 160px;
+        min-height: 85vh;
+    }
 }
 
 /* Medium desktop screens */
 @media (min-width: 1201px) and (max-width: 1400px) {
     .hero-section {
-        padding-top: 90px;
+        padding-top: 110px;
         padding-bottom: 50px;
     }
     
@@ -317,12 +325,20 @@ p {
         padding: 0 4rem;
         gap: 4rem;
     }
+    
+    /* Specific adjustments for menu, gallery, and contact hero sections on medium laptops */
+    .menu-hero-section,
+    .gallery-hero-section,
+    .contact-hero-section {
+        padding-top: 150px;
+        min-height: 88vh;
+    }
 }
 
 /* Smaller desktop screens - additional padding */
 @media (min-width: 768px) and (max-width: 1000px) {
     .hero-section {
-        padding-top: 120px;
+        padding-top: 140px;
         padding-bottom: 70px;
     }
     
@@ -338,12 +354,20 @@ p {
     .hero-subtitle {
         font-size: clamp(1rem, 1.8vw, 1.2rem);
     }
+    
+    /* Specific adjustments for menu, gallery, and contact hero sections on smaller desktop screens */
+    .menu-hero-section,
+    .gallery-hero-section,
+    .contact-hero-section {
+        padding-top: 180px;
+        min-height: 80vh;
+    }
 }
 
 /* Extra small desktop screens */
 @media (min-width: 1001px) and (max-width: 1200px) {
     .hero-section {
-        padding-top: 110px;
+        padding-top: 130px;
         padding-bottom: 65px;
     }
     
@@ -358,6 +382,24 @@ p {
     
     .hero-subtitle {
         font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+    }
+    
+    /* Specific adjustments for menu, gallery, and contact hero sections on extra small desktop screens */
+    .menu-hero-section,
+    .gallery-hero-section,
+    .contact-hero-section {
+        padding-top: 170px;
+        min-height: 82vh;
+    }
+}
+
+/* 14-inch laptop specific adjustments */
+@media (min-width: 1366px) and (max-width: 1440px) {
+    .menu-hero-section,
+    .gallery-hero-section,
+    .contact-hero-section {
+        padding-top: 180px;
+        min-height: 85vh;
     }
 }
 
