@@ -798,9 +798,44 @@ p {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    aspect-ratio: 1;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item.animate-in {
+    animation: scaleIn 0.8s ease forwards;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
 }
 
 .gallery-item {
@@ -2364,10 +2399,9 @@ input, textarea {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
 
 .gallery-item {
@@ -2545,6 +2579,17 @@ input, textarea {
 }
 
 /* Responsive Design for Gallery */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 1;
+    }
+}
+
 @media (max-width: 768px) {
     .gallery-hero-section .hero-content {
         grid-template-columns: 1fr;
@@ -2553,8 +2598,12 @@ input, textarea {
     }
     
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 1;
     }
     
     .category-filters {
@@ -2576,6 +2625,12 @@ input, textarea {
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 1;
+        max-width: 350px;
+        margin: 0 auto;
     }
     
     .category-filters {
