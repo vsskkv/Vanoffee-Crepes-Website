@@ -1920,13 +1920,13 @@ input, textarea {
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    margin-right: 50%;
+    margin-right: 55%;
     padding-right: 2rem;
     text-align: right;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    margin-left: 50%;
+    margin-left: 55%;
     padding-left: 2rem;
     text-align: left;
 }
@@ -2111,7 +2111,7 @@ input, textarea {
     .timeline-item:nth-child(even) .timeline-content {
         margin-left: 60px;
         margin-right: 0;
-        padding-left: 2rem;
+        padding-left: 1.5rem;
         padding-right: 0;
         text-align: left;
     }
@@ -2119,7 +2119,47 @@ input, textarea {
     .timeline-icon {
         left: 30px;
         transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: 52%;
+        padding-right: 1.5rem;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 52%;
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: 58%;
+        padding-right: 2.5rem;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 58%;
+        padding-left: 2.5rem;
+    }
+    
+    .timeline-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+}
     
     .story-content {
         padding-right: 0;
