@@ -208,8 +208,8 @@ p {
 }
 
 .navbar-brand img {
-    height: 40px;
-    width: auto;
+    height: 60px !important;
+    width: auto !important;
 }
 
 .navbar-nav {
@@ -420,6 +420,11 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar-brand img {
+        height: 55px !important;
+        width: auto !important;
+    }
+    
     .navbar-nav {
         display: none;
         position: absolute;
@@ -449,6 +454,11 @@ p {
 @media (max-width: 480px) {
     .container {
         padding: 0 0.5rem;
+    }
+    
+    .navbar-brand img {
+        height: 50px !important;
+        width: auto !important;
     }
     
     .btn {
