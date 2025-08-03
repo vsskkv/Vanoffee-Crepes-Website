@@ -725,6 +725,10 @@ p {
 
 .why-us-content {
     padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .feature-list {
@@ -771,6 +775,9 @@ p {
 
 .why-us-image {
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .why-us-image img {
@@ -3002,6 +3009,7 @@ input, textarea {
     border-radius: var(--border-radius);
     padding: 3rem;
     box-shadow: var(--shadow-medium);
+    position: relative;
 }
 
 .form-header {
@@ -3023,17 +3031,21 @@ input, textarea {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+    align-items: start;
+    margin-bottom: 0;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .form-group.full-width {
@@ -3045,6 +3057,7 @@ input, textarea {
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    display: block;
 }
 
 .form-group input,
@@ -3056,6 +3069,16 @@ input, textarea {
     font-size: 1rem;
     transition: var(--transition);
     background: white;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
 }
 
 .form-group input:focus,
