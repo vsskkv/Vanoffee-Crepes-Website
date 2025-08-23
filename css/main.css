@@ -409,7 +409,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Images/11.jpg') center/cover no-repeat;
+    background: url('Images/Placeholder.png') center/cover no-repeat;
     z-index: 1;
 }
 
@@ -1496,41 +1496,41 @@ body.page-loaded {
 
 /* Custom Cursor */
 body {
-    cursor: url('Images/11.jpg'), auto;
+    cursor: url('Images/Placeholder.png'), auto;
 }
 
 /* Different cursor states */
 a, button, .btn, .nav-link, .search-toggle, .search-close, .navbar-toggler {
-    cursor: url('Images/12.jpg'), pointer;
+    cursor: url('Images/Placeholder.png'), pointer;
 }
 
 /* Hover effects with different cursor */
 a:hover, button:hover, .btn:hover, .nav-link:hover, .search-toggle:hover, .search-close:hover, .navbar-toggler:hover {
-    cursor: url('Images/13.jpg'), pointer;
+    cursor: url('Images/Placeholder.png'), pointer;
 }
 
 /* Interactive elements */
 .product-card, .gallery-item, .feature-item {
-    cursor: url('Images/14.jpg'), pointer;
+    cursor: url('Images/Placeholder.png'), pointer;
 }
 
 .product-card:hover, .gallery-item:hover, .feature-item:hover {
-    cursor: url('Images/15.jpg'), pointer;
+    cursor: url('Images/Placeholder.png'), pointer;
 }
 
 /* Text selection cursor */
 input, textarea {
-    cursor: url('Images/16.jpg'), text;
+    cursor: url('Images/Placeholder.png'), text;
 }
 
 /* Loading cursor */
 .loading {
-    cursor: url('Images/17.jpg'), wait;
+    cursor: url('Images/Placeholder.png'), wait;
 }
 
 /* Disabled cursor */
 .disabled, [disabled] {
-    cursor: url('Images/18.jpg'), not-allowed;
+    cursor: url('Images/Placeholder.png'), not-allowed;
 }
 
 /* About Page Specific Styles */
@@ -1553,7 +1553,7 @@ input, textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Images/11.jpg') center/cover no-repeat;
+    background: url('Images/Placeholder.png') center/cover no-repeat;
     z-index: 1;
 }
 
@@ -2334,7 +2334,7 @@ input, textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Images/11.jpg') center/cover no-repeat;
+    background: url('Images/Placeholder.png') center/cover no-repeat;
     z-index: 1;
 }
 
@@ -2682,7 +2682,7 @@ input, textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Images/13.jpg') center/cover no-repeat;
+    background: url('Images/Placeholder.png') center/cover no-repeat;
     z-index: 1;
 }
 
@@ -3272,7 +3272,7 @@ input, textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Images/15.jpg') center/cover no-repeat;
+    background: url('Images/Placeholder.png') center/cover no-repeat;
     z-index: 1;
 }
 
