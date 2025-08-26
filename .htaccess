@@ -1,0 +1,38 @@
+# Force proper MIME types
+AddType application/xml .xml
+AddType text/xml .xml
+
+# Ensure sitemap.xml is served as XML
+<Files "sitemap.xml">
+    ForceType application/xml
+    Header set Content-Type "application/xml; charset=utf-8"
+</Files>
+
+# Ensure robots.txt is served as text
+<Files "robots.txt">
+    ForceType text/plain
+    Header set Content-Type "text/plain; charset=utf-8"
+</Files>
+
+# Enable compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Set cache headers for static assets
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+</IfModule>
