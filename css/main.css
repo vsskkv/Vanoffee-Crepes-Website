@@ -3504,8 +3504,8 @@ input, textarea {
     font-size: 0.7rem;
     font-weight: 600;
     margin-right: 0.3rem;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-transform: none !important;
 }
 
 .dietary-label.vegan {
@@ -3521,6 +3521,7 @@ input, textarea {
 .dietary-label.gf {
     background: #FF9800;
     color: white;
+    text-transform: none !important;
 }
 
 /* Menu Info */
