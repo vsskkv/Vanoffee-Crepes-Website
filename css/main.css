@@ -555,6 +555,35 @@ p {
     transition: all 0.3s ease;
 }
 
+/* Desktop hero image sizing - make much bigger and centered for desktop only */
+@media (min-width: 1201px) {
+    .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .floating-crepe {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .crepe-image {
+        width: 700px;
+        height: 700px;
+        border-width: 15px;
+        margin: 0 auto;
+    }
+    
+    .crepe-glow {
+        width: 800px;
+        height: 800px;
+    }
+}
+
 /* Responsive hero image sizing */
 @media (max-width: 1200px) {
     .crepe-image {
