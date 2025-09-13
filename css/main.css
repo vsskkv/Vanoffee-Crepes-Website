@@ -1711,18 +1711,18 @@ input, textarea {
 }
 
 .floating-1 {
-    width: 200px;
-    height: 200px;
-    top: 20%;
-    left: 10%;
+    width: 240px;
+    height: 240px;
+    top: 15%;
+    left: 5%;
     animation: float 6s ease-in-out infinite;
 }
 
 .floating-2 {
-    width: 160px;
-    height: 160px;
-    bottom: 20%;
-    right: 15%;
+    width: 260px;
+    height: 260px;
+    bottom: 5%;
+    right: 2%;
     animation: float 6s ease-in-out infinite 2s;
 }
 
@@ -1730,6 +1730,15 @@ input, textarea {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: scale(1.4);
+    border-radius: 50%;
+}
+
+.floating-2 .crepe-image {
+    transform: scale(1.3);
+    object-position: center center;
 }
 
 .floating-icon {
