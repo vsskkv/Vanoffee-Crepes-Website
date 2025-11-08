@@ -130,8 +130,8 @@
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" pattern="[0-9+\-\s\(\)]{10,15}">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required inputmode="tel" autocomplete="tel" pattern="^(\+?44\s?[\d\s]{9,10}|0[\d\s]{10})$" title="Enter a UK phone number starting with 0 or +44" placeholder="e.g. 07123 456789">
                             <div class="error-message" id="phone-error"></div>
                         </div>
                         <div class="form-group">
@@ -155,12 +155,9 @@
                             <div class="error-message" id="event-date-error"></div>
                         </div>
                         <div class="form-group">
-                            <label for="guests">Expected Guests</label>
-                            <select id="guests" name="guests">
-                                <option value="">Select Guest Count</option>
-                                <option value="under-25">Under 25</option>
-                                <option value="26+">26+</option>
-                            </select>
+                            <label for="guests">Expected Guests *</label>
+                            <input type="number" id="guests" name="guests" required min="1" max="9999" step="1" placeholder="Enter estimated guest count">
+                            <div class="error-message" id="guests-error"></div>
                         </div>
                     </div>
                     
@@ -311,12 +308,52 @@
         }
 
         function validatePhone(phone) {
-            if (phone && phone.trim() !== '') {
-                const phoneRegex = /^[\d\s\+\-\(\)]{10,15}$/;
-                if (!phoneRegex.test(phone)) {
-                    return 'Please enter a valid phone number';
-                }
+            if (!phone || phone.trim() === '') {
+                return 'Please enter your phone number';
             }
+
+            const normalized = phone.replace(/[\s\-\(\)]/g, '');
+
+            if (normalized.startsWith('+')) {
+                if (!normalized.startsWith('+44')) {
+                    return 'Please enter a UK phone number starting with +44 or 0';
+                }
+                const digits = normalized.slice(3);
+                if (!/^\d{9,10}$/.test(digits)) {
+                    return 'UK phone numbers must have 9 to 10 digits after the country code';
+                }
+            } else if (normalized.startsWith('44')) {
+                const digits = normalized.slice(2);
+                if (!/^\d{9,10}$/.test(digits)) {
+                    return 'UK phone numbers must have 9 to 10 digits after the country code';
+                }
+            } else if (normalized.startsWith('0')) {
+                const digits = normalized.slice(1);
+                if (!/^\d{9,10}$/.test(digits)) {
+                    return 'Please enter an 11-digit UK number starting with 0';
+                }
+            } else {
+                return 'Please enter a UK phone number starting with +44 or 0';
+            }
+
+            return '';
+        }
+
+        function validateGuests(guests) {
+            if (!guests || guests.trim() === '') {
+                return 'Please enter the expected number of guests';
+            }
+
+            const value = Number(guests);
+
+            if (!Number.isInteger(value) || value < 1) {
+                return 'Guest count must be a whole number greater than 0';
+            }
+
+            if (value > 9999) {
+                return 'Guest count must be less than 10,000';
+            }
+
             return '';
         }
 
@@ -386,6 +423,9 @@
                     case 'phone':
                         showError('phone', validatePhone(value));
                         break;
+                    case 'guests':
+                        showError('guests', validateGuests(value));
+                        break;
                     case 'event-type':
                         showError('event-type', validateEventType(value));
                         break;
@@ -414,6 +454,7 @@
             const nameError = validateName(data.name);
             const emailError = validateEmail(data.email);
             const phoneError = validatePhone(data.phone);
+            const guestsError = validateGuests(data.guests);
             const eventTypeError = validateEventType(data['event-type']);
             const eventDateError = validateEventDate(data['event-date']);
             const messageError = validateMessage(data.message);
@@ -422,12 +463,13 @@
             showError('name', nameError);
             showError('email', emailError);
             showError('phone', phoneError);
+            showError('guests', guestsError);
             showError('event-type', eventTypeError);
             showError('event-date', eventDateError);
             showError('message', messageError);
             
             // Check if there are any errors
-            if (nameError || emailError || phoneError || eventTypeError || eventDateError || messageError) {
+            if (nameError || emailError || phoneError || guestsError || eventTypeError || eventDateError || messageError) {
                 return;
             }
             
