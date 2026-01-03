@@ -130,6 +130,14 @@
     color: var(--vc-yellow);
 }
 
+.footer .venture-link {
+    transition: color 0.3s ease;
+}
+
+.footer .venture-link:hover {
+    color: #a855f7;
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.2);
     margin-top: 2rem;
